@@ -60,7 +60,7 @@ public class Login extends Application{
             @Override
             public void handle(ActionEvent e) {
                 actiontarget.setFill(Color.FIREBRICK);
-                ulf.print(userTextField.getText());
+                ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
             }
         });
