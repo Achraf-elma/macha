@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ConnectionPostgreSQL{
 
-	public ConnectionPostgreSQL() {
+	public ConnectionPostgreSQL(String userid) {
 		try {
 			// Chargement du pilote JDBC
 			Class.forName("org.postgresql.Driver");
@@ -15,7 +15,7 @@ public class ConnectionPostgreSQL{
 			// Cr�ation d'une instruction
 			Statement statement = con.createStatement();
 			// Ex�cution d'une requete
-			String query = "SELECT * FROM Users";
+			String query = "SELECT * FROM Users WHERE username = '" + userid + "'";
 			ResultSet resultset = statement.executeQuery(query);
 			// Traitement des r�sultats
 			while(resultset.next()) {
@@ -32,6 +32,6 @@ public class ConnectionPostgreSQL{
 
 
 	public static void main(String[] args) {
-		ConnectionPostgreSQL test = new ConnectionPostgreSQL();
+		//ConnectionPostgreSQL test = new ConnectionPostgreSQL();
 	}	
 }
