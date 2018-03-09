@@ -71,6 +71,7 @@ public class Login extends Application{
 		Scene scene = new Scene(grid, 300, 275);
 		primaryStage.setScene(scene);
         primaryStage.show();
+        salut hugo
 		
 	}
 
