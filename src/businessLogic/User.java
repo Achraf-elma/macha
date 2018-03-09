@@ -14,8 +14,18 @@ public class User {
 	public User(String nick, String pwd, String firstname, String lastname, Date birth, String address) {
 		
 	}
-	// communication object
-	public void login(String userid, String pwd, User usr) {
+	public User(String nick, String pwd) {
+		this.nickname = nick;
+		this.pwd = pwd;
 		
+	}
+	// communication object
+	public void login(String userid, String pwd) {
+		if(userid.equals(this.nickname) && pwd.equals(this.pwd)) {
+			System.out.println("Login correct");
+		}
+		else {
+			System.out.println("Login incorrect");
+		}
 	}
 }

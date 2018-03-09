@@ -3,8 +3,10 @@ import java.sql.Connection;
 import java.sql.*;
 
 public class ConnectionPostgreSQL{
-
-	public ConnectionPostgreSQL(String userid) {
+	private String nom;
+	private String mdp;
+	
+	public ConnectionPostgreSQL(String userid, String pwd) {
 		try {
 			// Chargement du pilote JDBC
 			Class.forName("org.postgresql.Driver");
@@ -19,8 +21,11 @@ public class ConnectionPostgreSQL{
 			ResultSet resultset = statement.executeQuery(query);
 			// Traitement des r�sultats
 			while(resultset.next()) {
-				System.out.println(resultset.getString(1) + " " + resultset.getString(2));
+				//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
+				this.nom = resultset.getString(2);
+				this.mdp = resultset.getString(1);
 			}
+			
 			// fermeture de la connexion
 			con.close();
 		} catch( ClassNotFoundException e) { 
@@ -30,7 +35,14 @@ public class ConnectionPostgreSQL{
 		}
 	}
 
-
+	public String getUserName() {
+		return this.nom;
+	}
+	
+	public String getPwd() {
+		return this.mdp;
+	}
+	
 	public static void main(String[] args) {
 		//ConnectionPostgreSQL test = new ConnectionPostgreSQL();
 	}	
