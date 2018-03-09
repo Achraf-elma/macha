@@ -11,13 +11,13 @@ public class ConnectionPostgreSQL{
 			// URL de connexion
 			String url = "jdbc:postgresql://localhost:5432/macha";
 			// Connexion
-			Connection con = DriverManager.getConnection(url, "postgres", "cypcyp");
-			// Création d'une instruction
+			Connection con = DriverManager.getConnection(url, "postgres", "admin");
+			// Crï¿½ation d'une instruction
 			Statement statement = con.createStatement();
-			// Exécution d'une requete
+			// Exï¿½cution d'une requete
 			String query = "SELECT * FROM Users";
 			ResultSet resultset = statement.executeQuery(query);
-			// Traitement des résultats
+			// Traitement des rï¿½sultats
 			while(resultset.next()) {
 				System.out.println(resultset.getString(1) + " " + resultset.getString(2));
 			}

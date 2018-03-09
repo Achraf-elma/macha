@@ -1,5 +1,6 @@
 package userinterface;
 
+import facade.UserLoginFacade;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
@@ -12,6 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.control.*;
 
 public class Login extends Application{
+	private UserLoginFacade ulf = new UserLoginFacade();
 
 	public static void main(String[] args) {
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
@@ -58,6 +60,7 @@ public class Login extends Application{
             @Override
             public void handle(ActionEvent e) {
                 actiontarget.setFill(Color.FIREBRICK);
+                ulf.print(userTextField.getText());
                 actiontarget.setText("Sign in button pressed");
             }
         });
