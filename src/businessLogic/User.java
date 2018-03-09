@@ -1,0 +1,21 @@
+package businessLogic;
+
+import java.util.*;
+
+public class User {
+	
+	private String nickname;
+	private String pwd;
+	private String userfirstname;
+	private String userlastname;
+	private String userdateofbirth;
+	private String address;
+	
+	public User(String nick, String pwd, String firstname, String lastname, Date birth, String address) {
+		
+	}
+	// communication object
+	public void login(String userid, String pwd, User usr) {
+		
+	}
+}
