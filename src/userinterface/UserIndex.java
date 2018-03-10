@@ -11,10 +11,24 @@ import javafx.scene.Scene;
 import javafx.scene.text.*;
 import javafx.scene.paint.Color;
 import javafx.scene.control.*;
+import businessLogic.User;
 
-public class Login extends Application{
-	private UserLoginFacade ulf = new UserLoginFacade();
-
+public class UserIndex extends Application{ //After logging in, the user is redirected to this interface where his main informations are displayed
+	
+	
+	private String nick;
+	private String lastname;
+	private String firstname;
+	private String dateOfBirth;
+	
+	public UserIndex(User u)
+	{
+		this.nick = u.getNickname();
+		this.lastname = u.getUserlastname();
+		this.firstname = u.getUserfirstname();
+		this.dateOfBirth = u.getUserdateofbirth();
+	}
+	
 	public static void main(String[] args) {
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
         launch(args);
@@ -22,17 +36,17 @@ public class Login extends Application{
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("JavaFX Welcome");
+		primaryStage.setTitle("My account");
 		GridPane grid = new GridPane();
 		//grid.setAlignment(Pos.CENTER);
 		grid.setHgap(10);
 		grid.setVgap(10);
 		grid.setPadding(new Insets(10, 10, 10, 10));
-		Text scenetitle = new Text("Welcome");
+		Text scenetitle = new Text("My account");
 		scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 		grid.add(scenetitle, 0, 0, 2, 1);
 
-		Label userName = new Label("User Name:");
+		Label userName = new Label("Welcome, " + this.nick);
 		grid.add(userName, 0, 1);
 
 		TextField userTextField = new TextField();
@@ -60,9 +74,8 @@ public class Login extends Application{
             @Override
             public void handle(ActionEvent e) {
                 actiontarget.setFill(Color.FIREBRICK);
-                ulf.login(userTextField.getText(), pwBox.getText());
+               // ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
-                
             }
         });
         btn2.setOnAction(new EventHandler<ActionEvent>() {
@@ -79,6 +92,4 @@ public class Login extends Application{
         primaryStage.show();
 		
 	}
-
 }
-

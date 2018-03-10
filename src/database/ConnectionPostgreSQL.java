@@ -1,10 +1,15 @@
 package database;
 import java.sql.Connection;
+import java.text.SimpleDateFormat;
 import java.sql.*;
 
 public class ConnectionPostgreSQL{
 	private String nom;
 	private String mdp;
+	private String dateOfBirth;
+	private String firstname;
+	private String lastname;
+	private String address;
 	
 	public ConnectionPostgreSQL(String userid, String pwd) {
 		try {
@@ -24,6 +29,10 @@ public class ConnectionPostgreSQL{
 				//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
 				this.nom = resultset.getString(1);
 				this.mdp = resultset.getString(2);
+				this.dateOfBirth = resultset.getString(3);
+				this.firstname = resultset.getString(4);
+				this.lastname = resultset.getString(5);
+				this.address = resultset.getString(6);
 			}
 			
 			// fermeture de la connexion
@@ -34,11 +43,45 @@ public class ConnectionPostgreSQL{
 			System.err.print("Erreur SQL : " + sqle);
 		}
 	}
+	
+	//GETTERS & SETTERS
 
 	public String getUserName() {
 		return this.nom;
 	}
 	
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getPwd() {
 		return this.mdp;
 	}
