@@ -29,6 +29,11 @@ public class UserIndex extends Application{ //After logging in, the user is redi
 		this.dateOfBirth = u.getUserdateofbirth();
 	}
 	
+	public UserIndex()
+	{
+		
+	}
+	
 	public static void main(String[] args) {
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
         launch(args);
