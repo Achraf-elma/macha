@@ -1,6 +1,6 @@
 package userinterface;
 
-import facade.UserLoginFacade;
+import facade.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 
 public class Login extends Application{
 	private UserLoginFacade ulf = new UserLoginFacade();
+	private UserIndexFacade uii = new UserIndexFacade();
 
 	public static void main(String[] args) {
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
@@ -22,7 +23,7 @@ public class Login extends Application{
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("JavaFX Welcome");
+		primaryStage.setTitle("Bienvenue!");
 		GridPane grid = new GridPane();
 		//grid.setAlignment(Pos.CENTER);
 		grid.setHgap(10);
@@ -62,7 +63,8 @@ public class Login extends Application{
                 actiontarget.setFill(Color.FIREBRICK);
                 ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
-                
+                uii.display(userTextField.getText());
+                primaryStage.close();
             }
         });
         btn2.setOnAction(new EventHandler<ActionEvent>() {

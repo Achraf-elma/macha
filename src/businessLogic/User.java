@@ -1,6 +1,7 @@
 package businessLogic;
 
 import java.util.*;
+import userinterface.*;
 
 public class User {
 	
@@ -12,7 +13,12 @@ public class User {
 	private String address;
 	
 	public User(String nick, String pwd, String firstname, String lastname, String birth, String address) {
-		
+		this.nickname = nick;
+		this.pwd = pwd;
+		this.userfirstname = firstname;
+		this.userlastname = lastname;
+		this.userdateofbirth = birth;
+		this.address = address;
 	}
 	public User(String nick, String pwd) {
 		this.nickname = nick;
@@ -27,6 +33,11 @@ public class User {
 		else {
 			System.out.println("Login incorrect");
 		}
+	}
+	
+	public void display(User usr) {
+		System.out.println("Bonjour, " + usr.getUserfirstname() + " " + usr.getUserlastname());
+		//UserIndex ui = new UserIndex(usr);
 	}
 		
 	// GETTERS & SETTERS
