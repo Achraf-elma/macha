@@ -1,0 +1,14 @@
+Host
+ec2-79-125-12-27.eu-west-1.compute.amazonaws.com
+Database
+de1d4s2ta7acdb
+User
+kycwwiftikpegb
+Port
+5432
+Password
+9fa070253aec8d296f0db3310e47ff66904a73e047e214d11675b50a7cb6dd01
+URI
+postgres://kycwwiftikpegb:9fa070253aec8d296f0db3310e47ff66904a73e047e214d11675b50a7cb6dd01@ec2-79-125-12-27.eu-west-1.compute.amazonaws.com:5432/de1d4s2ta7acdb
+Heroku CLI
+heroku pg:psql postgresql-rugged-93354 --app ig4-macha
