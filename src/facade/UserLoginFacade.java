@@ -11,7 +11,7 @@ public class UserLoginFacade {
 		User userCreated = ud.createById(userid, pwd);
 		
 		if(userCreated != null){
-			System.out.print("OK Connecté");
+			System.out.print("Connecté!");
 		}else{
 			System.out.println("Fail");
 		}

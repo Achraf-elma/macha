@@ -11,8 +11,8 @@ public class UserDAOPostgres extends UserDAO{
 	
 	private User u;
 	
-	private String nom;
-	private String mdp;
+	private String nick;
+	private String pwd;
 	private String dateOfBirth;
 	private String firstname;
 	private String lastname;
@@ -37,15 +37,15 @@ public class UserDAOPostgres extends UserDAO{
 			}else{
 				while(resultset.next()) {
 					//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
-					this.nom = resultset.getString(1);
-					this.mdp = resultset.getString(2);
+					this.nick = resultset.getString(1);
+					this.pwd = resultset.getString(2);
 					this.dateOfBirth = resultset.getString(3);
 					this.firstname = resultset.getString(4);
 					this.lastname = resultset.getString(5);
 					this.address = resultset.getString(6);
 				}
 				
-				this.u = new User(nom, mdp, dateOfBirth, firstname, lastname, address);
+				this.u = new User(nick, pwd, dateOfBirth, firstname, lastname, address);
 			}
 			
 		
