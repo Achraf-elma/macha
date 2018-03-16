@@ -18,10 +18,15 @@ public class UserDAO {
 	private String lastname;
 	private String address;
 	
+	private Connection coSql;
+	
+	public UserDAO(Connection coSql) {
+		this.coSql = coSql;
+	}
+	
 
 			
 	public void login(String userid, String pwd) { // = createIdByUser()
-		Connection coSql = ConnectionPostgreSQL.getInstance();
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
