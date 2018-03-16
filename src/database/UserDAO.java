@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import database.ConnectionPostgreSQL;
 
-public class UserDAO {
+public abstract class UserDAO {
 	private User u;
 	
 	private String nom;
@@ -20,17 +20,12 @@ public class UserDAO {
 	
 	private Connection coSql;
 	
-	public UserDAO(Connection coSql) {
-		this.coSql = coSql;
-	}
 	
 
 			
-	public void login(String userid, String pwd) { // = createIdByUser()
-		
-	}
+	public abstract User createById(String userid, String pwd);
 	
-	public void display(String nickname) {
+	/*public void display(String nickname) {
 		Connection coSql = ConnectionPostgreSQL.getInstance();
 		Statement statement;
 		try {
@@ -53,7 +48,7 @@ public class UserDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-	}
+	}*/
 	
 	/*public void getIndexInfos(String userid, String pwd) {
 		coSql = new ConnectionPostgreSQL(userid, pwd);

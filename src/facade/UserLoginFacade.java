@@ -1,5 +1,6 @@
 package facade;
 import database.*;
+import businessLogic.*;
 
 public class UserLoginFacade {
 
@@ -7,6 +8,6 @@ public class UserLoginFacade {
 	private UserDAO ud = af.createUserDAO();
 	
 	public void login(String userid, String pwd) {
-		ud.login(userid, pwd);
+		User userCreated = ud.createById(userid, pwd);
 	}
 }

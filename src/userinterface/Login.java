@@ -63,7 +63,7 @@ public class Login extends Application{
                 actiontarget.setFill(Color.FIREBRICK);
                 ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
-                uii.display(userTextField.getText());
+              //  uii.display(userTextField.getText());
                 primaryStage.close();
             }
         });

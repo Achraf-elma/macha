@@ -21,11 +21,11 @@ public class UserDAOPostgres extends UserDAO{
 	private Connection coSql;
 	
 	public UserDAOPostgres(Connection coSql) {
-		super(coSql);
+		this.coSql = coSql;
 		// TODO Auto-generated constructor stub
 	}
 
-	public void login(String userid, String pwd) {
+	public User createById(String userid, String pwd) {
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
@@ -41,16 +41,16 @@ public class UserDAOPostgres extends UserDAO{
 				this.address = resultset.getString(6);
 			}
 			
-			this.u = new User(nom, mdp);
+			this.u = new User(nom, mdp, dateOfBirth, firstname, lastname, address);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		
-		u.login(userid, pwd);
+		return u;
 	}
 
-	public void dispaly(String nick) {
+	/*public void dispaly(String nick) {
 		super.display(nick);
-	}
+	}*/
 }

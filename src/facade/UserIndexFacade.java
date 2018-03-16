@@ -11,8 +11,8 @@ public class UserIndexFacade {
 	private AbstractDAOFactory af = new PostgresFactory();
 	private UserDAO ud = af.createUserDAO();
 	
-	public void display(String nick) {
+	/*public void display(String nick) {
 		ud.display(nick);
-	}
+	}*/
 	
 }
