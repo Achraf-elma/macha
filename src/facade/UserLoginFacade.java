@@ -6,14 +6,25 @@ public class UserLoginFacade {
 
 	private AbstractDAOFactory af = new PostgresFactory();
 	private UserDAO ud = af.createUserDAO();
+	private Boolean connected=false; 
 	
 	public void login(String userid, String pwd) {
 		User userCreated = ud.createById(userid, pwd);
 		
 		if(userCreated != null){
-			System.out.print("Connecté!");
+			setConnected(true);
 		}else{
-			System.out.println("Fail");
+			setConnected(false);
 		}
+		
+	
+	}
+
+	public Boolean getConnected() {
+		return connected;
+	}
+
+	public void setConnected(Boolean connected) {
+		this.connected = connected;
 	}
 }

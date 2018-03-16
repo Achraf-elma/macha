@@ -19,12 +19,12 @@
 				<Label layoutX="227.0" layoutY="23.0" prefHeight="16.0"
 					prefWidth="125.0" text="Welcome to MACHA" />
 				<Button fx:id="btnLogin"  layoutX="255.0" layoutY="207.0" mnemonicParsing="false"
-					text="Login " onAction="#Login" />
+					text="Login " onAction="#login" />
 				<Label layoutX="200.0" layoutY="66.0" text="Username :" />
 				<Label layoutX="200.0" layoutY="126.0" text="PassWord :" />
 				<TextField fx:id="txtUsername" layoutX="199.0" layoutY="83.0" />
-				<TextField layoutX="200.0" layoutY="143.0" />
-				<Button layoutX="250.0" layoutY="255.0" mnemonicParsing="false"
+				<TextField fx:id="txtpassWord" layoutX="200.0" layoutY="143.0" />
+				<Button fx:id="btnSignUp" layoutX="250.0" layoutY="255.0" onAction="#signup"  mnemonicParsing="false"
 					text="Sign up" />
 				<TextArea fx:id="txtArea" layoutX="384.0" layoutY="155.0" prefHeight="200.0"
 					prefWidth="200.0" />

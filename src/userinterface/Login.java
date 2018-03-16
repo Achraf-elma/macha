@@ -70,12 +70,12 @@ public class Login extends Application{
                 actiontarget.setFill(Color.FIREBRICK);
                 ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
-<<<<<<< Updated upstream
+
               //  uii.display(userTextField.getText());
-=======
+
                 popup.show(primaryStage);
                 
->>>>>>> Stashed changes
+
             }
         });
         btn2.setOnAction(new EventHandler<ActionEvent>() {

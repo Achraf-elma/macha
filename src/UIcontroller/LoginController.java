@@ -4,6 +4,7 @@ package UIcontroller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import facade.UserIndexFacade;
 import facade.UserLoginFacade;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,26 +42,40 @@ public class LoginController implements Initializable {
 		//
 		
 		private UserLoginFacade ulf = new UserLoginFacade();
-		
+
 		/**
 		 * Method used by btnLogin from Java FX
 		 */
 		 @FXML
-		    private void Login(ActionEvent e){
+		    private void login(ActionEvent e){
 			 username = txtUsername.getText();
 			 passWord = txtUsername.getText();
 		      if(username.equals("") || passWord.equals(""))
 		      {
-		    	  txtArea.appendText("Enter ID or PSW");
+		    	  display("Enter ID or PSW");
 		      }
 		      else
 		      {
 		    	   ulf.login(username, passWord);
-		    	   display("Sign in button pressed");
+		    	   
+		    	   if (ulf.getConnected())
+		    	   {
+		    		   display("Connected as" + username);
+		    	   }
+		    	   else
+		    	   {
+		    		   display("Failed");
+		    	   }
 		      }
 		    }
 
-	
+		 @FXML
+		    private void signup(ActionEvent e){
+			 
+		    	   display("Sign up button pressed");
+		      
+		    }
+		 
 		 	public void display(String msg)
 		 	{
 		 	  txtArea.appendText(msg + "\n");
