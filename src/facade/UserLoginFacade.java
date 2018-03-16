@@ -9,5 +9,11 @@ public class UserLoginFacade {
 	
 	public void login(String userid, String pwd) {
 		User userCreated = ud.createById(userid, pwd);
+		
+		if(userCreated != null){
+			System.out.print("OK Connecté");
+		}else{
+			System.out.println("Fail");
+		}
 	}
 }

@@ -31,19 +31,27 @@ public class UserDAOPostgres extends UserDAO{
 			statement = coSql.createStatement();
 			String query = "SELECT * FROM Users WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
 			ResultSet resultset = statement.executeQuery(query);
-			while(resultset.next()) {
-				//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
-				this.nom = resultset.getString(1);
-				this.mdp = resultset.getString(2);
-				this.dateOfBirth = resultset.getString(3);
-				this.firstname = resultset.getString(4);
-				this.lastname = resultset.getString(5);
-				this.address = resultset.getString(6);
+			
+			if(!resultset.next()){
+				this.u = null;
+			}else{
+				while(resultset.next()) {
+					//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
+					this.nom = resultset.getString(1);
+					this.mdp = resultset.getString(2);
+					this.dateOfBirth = resultset.getString(3);
+					this.firstname = resultset.getString(4);
+					this.lastname = resultset.getString(5);
+					this.address = resultset.getString(6);
+				}
+				
+				this.u = new User(nom, mdp, dateOfBirth, firstname, lastname, address);
 			}
 			
-			this.u = new User(nom, mdp, dateOfBirth, firstname, lastname, address);
+		
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 		
