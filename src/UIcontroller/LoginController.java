@@ -49,7 +49,7 @@ public class LoginController implements Initializable {
 		 @FXML
 		    private void login(ActionEvent e){
 			 username = txtUsername.getText();
-			 passWord = txtUsername.getText();
+			 passWord = txtPassWord.getText();
 		      if(username.equals("") || passWord.equals(""))
 		      {
 		    	  display("Enter ID or PSW");
@@ -60,7 +60,7 @@ public class LoginController implements Initializable {
 		    	   
 		    	   if (ulf.getConnected())
 		    	   {
-		    		   display("Connected as" + username);
+		    		   display("Connected as " + username + "  .");
 		    	   }
 		    	   else
 		    	   {
