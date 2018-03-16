@@ -1,9 +1,14 @@
 package database;
 
+import java.sql.Connection;
+
 public class PostgresFactory extends AbstractDAOFactory{
 	
+	Connection coSql = ConnectionPostgreSQL.getInstance();
+
 	public UserDAO createUserDAO() {
-		return new UserDAOPostgres();
+		return new UserDAOPostgres(coSql);
 	}
 
 }
+// Connection here
