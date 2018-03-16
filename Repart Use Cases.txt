@@ -1,0 +1,19 @@
+Maxime : Event Management CRUD
+Partnership List
+User List
+
+Cyp : Invitation
+User Management CRUD
+Payment Management
+
+Alex : Login
+Logout
+Category Management
+
+Ach : Map
+Rating System Management
+Event List
+
+Hugo : Public Chat Management
+Private Message manager
+Partnership Management CRUD
