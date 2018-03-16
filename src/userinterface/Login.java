@@ -3,6 +3,7 @@ package userinterface;
 import facade.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.Scene;
 import javafx.scene.text.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.control.*;
 
 public class Login extends Application{
@@ -20,6 +22,8 @@ public class Login extends Application{
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
         launch(args);
     }
+	
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -56,6 +60,9 @@ public class Login extends Application{
 		final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
         
+        final Popup popup = new Popup(); popup.setX(300); popup.setY(200);
+        popup.getContent().addAll(new Circle(25, 25, 50, Color.AQUAMARINE));
+        
         btn.setOnAction(new EventHandler<ActionEvent>() {
         	 
             @Override
@@ -63,7 +70,12 @@ public class Login extends Application{
                 actiontarget.setFill(Color.FIREBRICK);
                 ulf.login(userTextField.getText(), pwBox.getText());
                 actiontarget.setText("Sign in button pressed");
+<<<<<<< Updated upstream
               //  uii.display(userTextField.getText());
+=======
+                popup.show(primaryStage);
+                
+>>>>>>> Stashed changes
             }
         });
         btn2.setOnAction(new EventHandler<ActionEvent>() {
