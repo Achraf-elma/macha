@@ -9,6 +9,7 @@ import facade.UserLoginFacade;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
@@ -27,7 +28,7 @@ public class LoginController implements Initializable {
 		private TextField txtUsername;
 		
 		@FXML
-		private TextField txtPassWord;
+		private PasswordField txtPassWord ;
 		
 		@FXML
 		private TextArea txtArea;
@@ -36,7 +37,7 @@ public class LoginController implements Initializable {
 		// Config
 		
 		private String username;
-		private String passWord;
+		private String passWord = " ";
 		private boolean connected;
 		
 		//
@@ -60,7 +61,7 @@ public class LoginController implements Initializable {
 		    	   
 		    	   if (ulf.getConnected())
 		    	   {
-		    		   display("Connected as " + username + "  .");
+		    		   display("Connected as " + username + " .");
 		    	   }
 		    	   else
 		    	   {
