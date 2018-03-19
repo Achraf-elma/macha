@@ -2,16 +2,16 @@ package userinterface;
 
 import java.io.IOException;
 
-import UIcontroller.LoginController;
+import UIcontroller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LoginUI extends Application {
+public class UserIndexUI extends Application {
 
-	 Stage primaryStage;
+	private Stage primaryStage;
 	// private VBox chatLayout;
 
 	@Override
@@ -22,11 +22,11 @@ public class LoginUI extends Application {
 
 	private void initLoginLayout() throws IOException {
 
-		FXMLLoader root = new FXMLLoader(getClass().getResource("LoginTest.fxml"));
-		root.setController(new LoginController());
+		FXMLLoader root = new FXMLLoader(getClass().getResource("UserIndex.fxml"));
+		root.setController(new UserIndexController());
 		Parent parent = root.load();
 		Scene scene = new Scene(parent);
-		primaryStage.setTitle("Login Interface");
+		primaryStage.setTitle("My Account");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

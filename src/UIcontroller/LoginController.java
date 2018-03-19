@@ -1,17 +1,24 @@
 package UIcontroller;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import facade.UserIndexFacade;
 import facade.UserLoginFacade;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import userinterface.UserIndexUI;
 import javafx.event.ActionEvent;
 
 public class LoginController implements Initializable {
@@ -44,11 +51,14 @@ public class LoginController implements Initializable {
 		
 		private UserLoginFacade ulf = new UserLoginFacade();
 
+
+
 		/**
 		 * Method used by btnLogin from Java FX
+		 * @throws IOException 
 		 */
 		 @FXML
-		    private void login(ActionEvent e){
+		    private void login(ActionEvent e) throws IOException{
 			 username = txtUsername.getText();
 			 passWord = txtPassWord.getText();
 		      if(username.equals("") || passWord.equals(""))
@@ -62,6 +72,7 @@ public class LoginController implements Initializable {
 		    	   if (ulf.getConnected())
 		    	   {
 		    		   display("Connected as " + username + " .");
+		    		  callUserIndex();
 		    	   }
 		    	   else
 		    	   {
@@ -69,6 +80,21 @@ public class LoginController implements Initializable {
 		    	   }
 		      }
 		    }
+
+		 
+		 private void callUserIndex() throws IOException{
+	
+			 
+			  Stage stage = new Stage();
+			    stage.setTitle("Shop Management");
+			    FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/userinterface/UserIndex.fxml"));
+			    //FXMLLoader myLoader = new FXMLLoader(YourClassHere.class.getResource("creatProduct.fxml"));
+			    Pane myPane = (Pane) myLoader.load();            
+			    Scene scene = new Scene(myPane);
+			    stage.setScene(scene);
+			    
+			    stage.show();    
+		      }
 
 		 @FXML
 		    private void signup(ActionEvent e){
