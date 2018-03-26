@@ -22,7 +22,7 @@ public class LoginUI extends Application {
 
 	private void initLoginLayout() throws IOException {
 
-		FXMLLoader root = new FXMLLoader(getClass().getResource("EventCreationUI.fxml"));
+		FXMLLoader root = new FXMLLoader(getClass().getResource("PartnersManager.fxml"));
 		//root.setController(new LoginController());
 		Parent parent = root.load();
 		Scene scene = new Scene(parent);

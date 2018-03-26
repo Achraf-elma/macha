@@ -1,0 +1,17 @@
+package database;
+
+import businessLogic.Partner;
+import java.sql.Connection;
+import database.ConnectionPostgreSQL;
+
+/**
+ *
+ * @author maximesoustelle
+ */
+public abstract class PartnersDAO {
+    private Partner p;	
+    private String name;
+    private Connection coSql;
+	
+    public abstract Partner addPartnerById(String name);
+}
