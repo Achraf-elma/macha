@@ -21,10 +21,10 @@ public class InvitationUI extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
-		initLoginLayout();
+		initInvitLayout();
 	}
 
-	private void initLoginLayout() throws IOException {
+	private void initInvitLayout() throws IOException {
 
 		FXMLLoader root = new FXMLLoader(getClass().getResource("Invitation.fxml"));
 		//root.setController(new InvitationController());
