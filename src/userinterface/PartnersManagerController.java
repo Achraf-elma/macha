@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -24,6 +25,8 @@ public class PartnersManagerController implements Initializable {
     private Button addBtn;
     
     private PartnersFacade pf = new PartnersFacade();
+    @FXML
+    private TextField nameTF;
 
     /**
      * Initializes the controller class.
@@ -35,7 +38,7 @@ public class PartnersManagerController implements Initializable {
 
     @FXML
     private void test(ActionEvent event) {
-        pf.add();
+        pf.add(nameTF.getText());
     }
     
 }

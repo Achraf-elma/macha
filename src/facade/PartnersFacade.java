@@ -11,7 +11,7 @@ public class PartnersFacade {
     private PartnersDAO partnerDAO = af.createPartnerDAO();
     private Boolean connected=false; 
     
-    public void add() {
-		Partner partnerCreated = partnerDAO.addPartnerById("test");
+    public void add(String name) {
+		partnerDAO.addPartnerById(name);
 	}
 }
