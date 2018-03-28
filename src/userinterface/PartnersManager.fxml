@@ -12,9 +12,11 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.PartnersManagerController">
    <children>
       <MenuBar prefHeight="26.0" prefWidth="600.0" />
-      <Label layoutX="255.0" layoutY="55.0" text="Manage Partners" />
-      <Button fx:id="addBtn" layoutX="450.0" layoutY="73.0" mnemonicParsing="false" onAction="#test" text="Add Partner" />
+      <Label layoutX="248.0" layoutY="26.0" text="Manage Partners" />
+      <Button fx:id="addBtn" layoutX="390.0" layoutY="60.0" mnemonicParsing="false" onAction="#test" text="Add Partner" />
       <ListView layoutX="98.0" layoutY="154.0" prefHeight="200.0" prefWidth="446.0" />
-      <TextField fx:id="nameTF" layoutX="217.0" layoutY="87.0" />
+      <TextField fx:id="addTF" layoutX="217.0" layoutY="60.0" />
+      <TextField fx:id="deleteTF" layoutX="217.0" layoutY="87.0" />
+      <Button fx:id="deleteBtn" layoutX="390.0" layoutY="87.0" mnemonicParsing="false" onAction="#delete" text="Delete Partner" />
    </children>
 </AnchorPane>

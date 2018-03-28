@@ -26,7 +26,11 @@ public class PartnersManagerController implements Initializable {
     
     private PartnersFacade pf = new PartnersFacade();
     @FXML
-    private TextField nameTF;
+    private TextField addTF;
+    @FXML
+    private TextField deleteTF;
+    @FXML
+    private Button deleteBtn;
 
     /**
      * Initializes the controller class.
@@ -38,7 +42,12 @@ public class PartnersManagerController implements Initializable {
 
     @FXML
     private void test(ActionEvent event) {
-        pf.add(nameTF.getText());
+        pf.add(addTF.getText());
+    }
+
+    @FXML
+    private void delete(ActionEvent event) {
+        pf.delete(deleteTF.getText());
     }
     
 }

@@ -14,4 +14,5 @@ public abstract class PartnersDAO {
     private Connection coSql;
 	
     public abstract void addPartnerById(String name);
+    public abstract void deletePartnerById(String name);
 }

@@ -29,4 +29,16 @@ public class PartnersDAOPostgres extends PartnersDAO{
 			e.printStackTrace();
 		} 
 	}
+        
+        public void deletePartnerById(String name){
+            Statement statement;
+		try {
+			statement = coSql.createStatement();
+			String query = "DELETE FROM partners WHERE name = '" + name + "'";
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
+        }
 }

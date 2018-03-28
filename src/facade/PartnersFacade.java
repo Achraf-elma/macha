@@ -12,6 +12,10 @@ public class PartnersFacade {
     private Boolean connected=false; 
     
     public void add(String name) {
-		partnerDAO.addPartnerById(name);
-	}
+	partnerDAO.addPartnerById(name);
+    }
+    
+    public void delete(String name) {
+	partnerDAO.deletePartnerById(name);
+    }
 }
