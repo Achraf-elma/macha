@@ -6,10 +6,8 @@
 package database;
 
 import businessLogic.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.*;
 
 /**
  *
@@ -27,23 +25,46 @@ public class EventDAOPostgres extends EventDAO {
     int capacity;
     String description;
 	
-    	private Connection coSql;
+    private Connection coSql;
+    Statement statement;
+
 
     public EventDAOPostgres(Connection coSql) {
 	this.coSql = coSql;
     }
         
-	public void createNewEvent(String eventName, String categ, String location, String date, float price, int capacity, String description){
+    public void createNewEvent(String eventName, String categ, String location, String date, float price, int capacity, String description){
        
-            Statement statement;
-		try {
-			statement = coSql.createStatement();
-			String query = "INSERT INTO events VALUES('" + eventName + "','" + categ + "','" + location + "', '" + date + "', " + price + ",'" + capacity + "','" + description +"')";
-                        statement.executeUpdate(query);
+        
+            try {
+		statement = coSql.createStatement();
+		String query = "INSERT INTO events VALUES('" + eventName + "','" + categ + "','" + location + "', '" + date + "', " + price + ",'" + capacity + "','" + description +"')";
+                statement.executeUpdate(query);
 			
-		} catch (SQLException e) {
+		} 
+            catch (SQLException e) {
 			
-			e.printStackTrace();
-		}
-        };
+		e.printStackTrace();
+            }
+        }
+    
+    public ArrayList<Event> getAllEvents(){
+        ArrayList<Event> allevents = new ArrayList<>();
+         try {
+		statement = coSql.createStatement();
+		String query = "SELECT * FROM events";
+                ResultSet resultset = statement.executeQuery(query);
+                
+                 while(resultset.next()) {
+                            allevents.add((Event) resultset);
+                        }
+		} 
+            catch (SQLException e) {
+			
+		e.printStackTrace();
+            }
+         return allevents;
+    }
+        
+        
 }

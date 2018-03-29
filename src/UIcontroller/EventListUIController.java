@@ -5,8 +5,10 @@
  */
 package UIcontroller;
 
+import businessLogic.*;
+import facade.*;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 import javafx.fxml.Initializable;
 
 /**
@@ -14,14 +16,21 @@ import javafx.fxml.Initializable;
  *
  * @author cyp
  */
+
+
 public class EventListUIController implements Initializable {
 
     /**
      * Initializes the controller class.
-     */
+     */ 
+    
+    private EventFacade ef = new EventFacade();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        ArrayList<Event> allevents = new ArrayList<>();
     }    
     
 }

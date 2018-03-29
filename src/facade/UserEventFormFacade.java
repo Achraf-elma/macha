@@ -15,7 +15,6 @@ public class UserEventFormFacade {
     
         private AbstractDAOFactory af = new PostgresFactory();
 	private EventDAO ed = af.createEventDAO();
-	private Boolean connected=false;
     
         public void createEvent(String name, String category, String location, String date, float price, int capacity, String description){
             ed.createNewEvent(name, category, location, date, price, capacity, description);

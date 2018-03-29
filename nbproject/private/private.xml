@@ -4,14 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/businessLogic/Event.java</file>
-            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/userinterface/eventlistui.css</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/PostgresFactory.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/EventDAOPostgres.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/UserEventFormFacade.java</file>
-            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/userinterface/EventListUI.fxml</file>
-            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/UserLoginFacade.java</file>
-            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/LoginController.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/PartnersDAOPostgres.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventCreationUIController.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventListUIController.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/EventFacade.java</file>
         </group>
     </open-files>
 </project-private>
