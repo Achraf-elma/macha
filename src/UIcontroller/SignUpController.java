@@ -19,7 +19,8 @@ import javafx.event.EventHandler;
 
 public class SignUpController implements Initializable {
 
-		
+			SignUpFacade sf = new SignUpFacade();
+			
 		// Java FX Implementation
 			@FXML
 			private TextField nicknameField;
@@ -52,14 +53,16 @@ public class SignUpController implements Initializable {
 			 private void welcome(){
 				 
 				/*	 
-				 * 
 				 
-				 * 
 				 validateNewUserButton.setOnAction(new EventHandler<ActionEvent>() {
 				            @Override
 				            public void handle(ActionEvent event) {
 				            
-				            	if(nicknameField firstNameField firstNameField emailNameField 
+				            	if(nicknameField.getText() != "" && firstNameField .getText() != "" && lastNameField .getText() != "" && emailNameField.getText() != "" && passwordField.getText() != "" && passwordConfirmField.getText() != ""){
+				            		if(passwordField.getText() == passwordConfirmField.getText()){
+				            			sf.createById(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameFiel.getText(),dateBirth,adress.getText());
+				            		}
+				            		
 				                System.out.println("Hello World!");
 				            }
 				        });
