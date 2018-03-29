@@ -5,7 +5,7 @@ import database.PostgresFactory;
 import database.UserDAO;
 import userinterface.UserIndex;
 
-import java.util.Date;
+import java.sql.Date;
 
 import businessLogic.User;
 

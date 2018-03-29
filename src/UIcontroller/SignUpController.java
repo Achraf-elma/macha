@@ -3,6 +3,10 @@ package UIcontroller;
 
 
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 import facade.SignUpFacade;
@@ -38,7 +42,7 @@ public class SignUpController implements Initializable {
 			private PasswordField passwordField;
 			
 			@FXML
-			private TextField passwordConfirmField;
+			private PasswordField passwordConfirmField;
 			
 			@FXML
 			private DatePicker birthDatePicker;
@@ -52,23 +56,24 @@ public class SignUpController implements Initializable {
 			 @FXML
 			 private void welcome(){
 				 
-				/*	 
+				
 				 
 				 validateNewUserButton.setOnAction(new EventHandler<ActionEvent>() {
 				            @Override
 				            public void handle(ActionEvent event) {
-				            
-				            	if(nicknameField.getText() != "" && firstNameField .getText() != "" && lastNameField .getText() != "" && emailNameField.getText() != "" && passwordField.getText() != "" && passwordConfirmField.getText() != ""){
+				            	
+				            	if(!nicknameField.getText().isEmpty() && !firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && !emailNameField.getText().isEmpty() && !passwordField.getText().isEmpty() && !passwordConfirmField.getText().isEmpty()){
 				            		if(passwordField.getText() == passwordConfirmField.getText()){
-				            			sf.createById(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameFiel.getText(),dateBirth,adress.getText());
+				            			Date birthDate = Date.valueOf(birthDatePicker.getValue());
+				            			sf.signUp(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameField.getText(),birthDate,emailNameField.getText());
+				            			System.out.println("ok");
 				            		}
-				            		
-				                System.out.println("Hello World!");
-				            }
-				        });
-				 */
+				            	}
+				        }
+				 });
 				 
-				 System.out.println("ok");
+				 
+				
 			
 				
 			 } 

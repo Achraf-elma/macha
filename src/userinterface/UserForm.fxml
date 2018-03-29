@@ -39,7 +39,6 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="emailNameField" alignment="CENTER_RIGHT" layoutX="219.0" layoutY="284.0" prefHeight="26.0" prefWidth="285.0" promptText="Your email adress" />
       <Label layoutX="105.0" layoutY="464.0" text="Birth date">
          <font>
             <Font name="System Bold" size="16.0" />
@@ -57,5 +56,6 @@
          </font>
       </Label>
       <TextField fx:id="nicknameField" alignment="CENTER_RIGHT" layoutX="218.0" layoutY="160.0" prefHeight="26.0" prefWidth="286.0" promptText="Your nickname" />
+      <TextField fx:id="emailField" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="283.0" prefHeight="26.0" prefWidth="286.0" promptText="Your email adress" />
    </children>
 </AnchorPane>

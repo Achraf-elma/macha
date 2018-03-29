@@ -63,13 +63,15 @@ public class UserDAOPostgres extends UserDAO{
 	public User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
 		Statement statement;
 		try {
+			System.out.println("MABIT");
 			statement = coSql.createStatement();
-			String query = "INSERT INTO machauser VALUES('" + userid +"','" + pwd + "','" + fn + "','"+ ln +"','"+ birthDate +"')";
+			String query = "INSERT INTO machauser(nickname,pwd,userfirstname,userlastname,userdateofbirth,useradress) VALUES('" + userid +"','" + pwd + "','" + fn + "','"+ ln +"','"+ birthDate +"','" + adress + "')";
 			ResultSet resultset = statement.executeQuery(query);
 			
 			if(!resultset.next()){
 				this.u = null;
 			}else{
+				
 				System.out.println(resultset.next());
 				this.u = null;
 				/*while(resultset.next()) {
