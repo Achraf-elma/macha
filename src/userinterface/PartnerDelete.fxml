@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="userinterface.PartnerDeleteController">
+    <stylesheets>
+        <URL value="@partnerdelete.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="251.0" layoutY="14.0" text="Delete a partner" />
+      <Label layoutX="209.0" layoutY="105.0" text="Name of the partner to delete" />
+      <TextField fx:id="nameTF" layoutX="217.0" layoutY="122.0" />
+      <Button fx:id="deleteBtn" layoutX="272.0" layoutY="173.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+   </children>
+</AnchorPane>

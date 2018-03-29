@@ -18,14 +18,14 @@ public class PartnersDAOPostgres extends PartnersDAO{
 	this.coSql = coSql;
     }
         
-        public void addPartnerById(String name) {
+        public void addPartnerById(String name, String desc) {
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "INSERT INTO partners(name) VALUES('" + name + "')";
+			String query = "INSERT INTO partner(partnername, partnerinfo) VALUES('" 
+                                + name + "', '" + desc + "')";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
 		} 
 	}
@@ -34,7 +34,7 @@ public class PartnersDAOPostgres extends PartnersDAO{
             Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "DELETE FROM partners WHERE name = '" + name + "'";
+			String query = "DELETE FROM partner WHERE partnername = '" + name + "'";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
 			
@@ -43,23 +43,36 @@ public class PartnersDAOPostgres extends PartnersDAO{
         }
         
         public String getAll(){
+            this.p = "";
             Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "SELECT * FROM partners";
+			String query = "SELECT * FROM partner";
 			ResultSet resultset = statement.executeQuery(query);
-			
-			if(!resultset.next()){
-				this.p += "";
-			}else{
-				while(resultset.next()) {
-					this.p += resultset.getString(1);
-                                        this.p += "\n";
-				}
-			}
+                        
+                        while(resultset.next()) {
+                            this.p += resultset.getString(2);
+                            this.p += " - ";
+                            this.p += resultset.getString(3);
+                            this.p += "\n";
+                        }
+                        
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
 		return this.p;
+        }
+        
+        public void updatePartnerById(String name, String desc){
+            Statement statement;
+		try {
+			statement = coSql.createStatement();
+			String query = "UPDATE partner SET partnerinfo = '" + desc 
+                                + "' WHERE partnername = '" + name + "'";
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
         }
 }

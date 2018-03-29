@@ -5,21 +5,27 @@
         <group>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/Login.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/UserDAO.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerUpdateController.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnersManagerController.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerAddController.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PartnersDAOPostgres.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/partnerdelete.css</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/ConnectionPostgreSQL.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/AbstractDAOFactory.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/UIcontroller/LoginController.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PostgresFactory.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerAdd.fxml</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/UserLoginFacade.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PrivateMessagesCenterUI.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/PrivateMessageFacade.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerDelete.fxml</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/LoginUI.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/businessLogic/User.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/UserDAOPostgres.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/PartnersFacade.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PartnersDAO.java</file>
             <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/businessLogic/Partner.java</file>
+            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerDeleteController.java</file>
         </group>
     </open-files>
 </project-private>
