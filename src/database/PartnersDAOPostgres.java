@@ -11,7 +11,7 @@ import java.sql.Statement;
  * @author maximesoustelle
  */
 public class PartnersDAOPostgres extends PartnersDAO{
-    private Partner p;
+    private String p = "";
     private Connection coSql;
 	
     public PartnersDAOPostgres(Connection coSql) {
@@ -40,5 +40,26 @@ public class PartnersDAOPostgres extends PartnersDAO{
 			
 			e.printStackTrace();
 		} 
+        }
+        
+        public String getAll(){
+            Statement statement;
+		try {
+			statement = coSql.createStatement();
+			String query = "SELECT * FROM partners";
+			ResultSet resultset = statement.executeQuery(query);
+			
+			if(!resultset.next()){
+				this.p += "";
+			}else{
+				while(resultset.next()) {
+					this.p += resultset.getString(1);
+                                        this.p += "\n";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return this.p;
         }
 }

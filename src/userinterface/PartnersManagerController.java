@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -31,6 +32,10 @@ public class PartnersManagerController implements Initializable {
     private TextField deleteTF;
     @FXML
     private Button deleteBtn;
+    @FXML
+    private TextArea textArea;
+    @FXML
+    private Button showBtn;
 
     /**
      * Initializes the controller class.
@@ -48,6 +53,11 @@ public class PartnersManagerController implements Initializable {
     @FXML
     private void delete(ActionEvent event) {
         pf.delete(deleteTF.getText());
+    }
+
+    @FXML
+    private void getAll(ActionEvent event) {
+        textArea.setText(pf.getAll());
     }
     
 }
