@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Date;
 
 import businessLogic.User;
 
@@ -46,6 +47,46 @@ public class UserDAOPostgres extends UserDAO{
 				}
 				
 				this.u = new User(nick, pwd, dateOfBirth, firstname, lastname, address);
+			}
+			
+		
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
+		
+		return u;
+	}
+	
+
+	public User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
+		Statement statement;
+		try {
+			statement = coSql.createStatement();
+			String query = "INSERT INTO machauser VALUES('" + userid +"','" + pwd + "','" + fn + "','"+ ln +"','"+ birthDate +"')";
+			ResultSet resultset = statement.executeQuery(query);
+			
+			if(!resultset.next()){
+				this.u = null;
+			}else{
+				System.out.println(resultset.next());
+				this.u = null;
+				/*while(resultset.next()) {
+					//System.out.println(resultset.getString(1) + " " + resultset.getString(2));
+					this.nick = resultset.getString(1);
+					this.pwd = resultset.getString(2);
+					
+					
+					this.dateOfBirth = resultset.getString(3);
+					this.firstname = resultset.getString(4);
+					this.lastname = resultset.getString(5);
+					this.address = resultset.getString(6);
+				}
+				
+				this.u = new User(nick, pwd, dateOfBirth, firstname, lastname, address);
+				*/
+				
 			}
 			
 		
