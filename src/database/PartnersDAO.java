@@ -16,4 +16,5 @@ public abstract class PartnersDAO {
     public abstract void addPartnerById(String name);
     public abstract void deletePartnerById(String name);
     public abstract String getAll();
+    public abstract void updatePartnerById(String name, String desc);
 }

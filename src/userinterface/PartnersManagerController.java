@@ -36,6 +36,12 @@ public class PartnersManagerController implements Initializable {
     private TextArea textArea;
     @FXML
     private Button showBtn;
+    @FXML
+    private TextField updateTF1;
+    @FXML
+    private TextField updateTF2;
+    @FXML
+    private Button updateBtn;
 
     /**
      * Initializes the controller class.
@@ -58,6 +64,11 @@ public class PartnersManagerController implements Initializable {
     @FXML
     private void getAll(ActionEvent event) {
         textArea.setText(pf.getAll());
+    }
+
+    @FXML
+    private void update(ActionEvent event) {
+        pf.update(this.updateTF1.getText(), this.updateTF2.getText());
     }
     
 }

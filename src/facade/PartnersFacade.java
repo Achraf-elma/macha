@@ -24,4 +24,8 @@ public class PartnersFacade {
 	this.prt = partnerDAO.getAll();
         return this.prt;
     }
+    
+    public void update(String name, String desc) {
+	partnerDAO.updatePartnerById(name,desc);
+    }
 }

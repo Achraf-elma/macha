@@ -19,5 +19,8 @@
       <Button fx:id="deleteBtn" layoutX="390.0" layoutY="87.0" mnemonicParsing="false" onAction="#delete" text="Delete Partner" />
       <TextArea fx:id="textArea" layoutX="14.0" layoutY="167.0" prefHeight="219.0" prefWidth="285.0" />
       <Button fx:id="showBtn" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#getAll" text="Show" />
+      <TextField fx:id="updateTF1" layoutX="50.0" layoutY="114.0" />
+      <TextField fx:id="updateTF2" layoutX="216.0" layoutY="114.0" />
+      <Button fx:id="updateBtn" layoutX="390.0" layoutY="114.0" mnemonicParsing="false" onAction="#update" text="Update" />
    </children>
 </AnchorPane>
