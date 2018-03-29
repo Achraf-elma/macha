@@ -18,14 +18,14 @@ public class PartnersDAOPostgres extends PartnersDAO{
 	this.coSql = coSql;
     }
         
-        public void addPartnerById(String name) {
+        public void addPartnerById(String name, String desc) {
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "INSERT INTO partner(partnername) VALUES('" + name + "')";
+			String query = "INSERT INTO partner(partnername, partnerinfo) VALUES('" 
+                                + name + "', '" + desc + "')";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
 		} 
 	}

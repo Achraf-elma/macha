@@ -13,14 +13,10 @@
    <children>
       <MenuBar prefHeight="26.0" prefWidth="600.0" />
       <Label layoutX="248.0" layoutY="26.0" text="Manage Partners" />
-      <Button fx:id="addBtn" layoutX="390.0" layoutY="60.0" mnemonicParsing="false" onAction="#test" text="Add Partner" />
-      <TextField fx:id="addTF" layoutX="217.0" layoutY="60.0" />
-      <TextField fx:id="deleteTF" layoutX="217.0" layoutY="87.0" />
-      <Button fx:id="deleteBtn" layoutX="390.0" layoutY="87.0" mnemonicParsing="false" onAction="#delete" text="Delete Partner" />
+      <Button fx:id="addBtn" layoutX="261.0" layoutY="60.0" mnemonicParsing="false" onAction="#add" text="Add Partner" />
+      <Button fx:id="deleteBtn" layoutX="254.0" layoutY="127.0" mnemonicParsing="false" onAction="#delete" text="Delete Partner" />
       <TextArea fx:id="textArea" layoutX="14.0" layoutY="167.0" prefHeight="219.0" prefWidth="285.0" />
-      <Button fx:id="showBtn" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#getAll" text="Show" />
-      <TextField fx:id="updateTF1" layoutX="50.0" layoutY="114.0" />
-      <TextField fx:id="updateTF2" layoutX="216.0" layoutY="114.0" />
-      <Button fx:id="updateBtn" layoutX="390.0" layoutY="114.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="showBtn" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#getAll" text="Show/Refresh" />
+      <Button fx:id="updateBtn" layoutX="276.0" layoutY="93.0" mnemonicParsing="false" onAction="#update" text="Update" />
    </children>
 </AnchorPane>

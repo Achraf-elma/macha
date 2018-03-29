@@ -12,8 +12,8 @@ public class PartnersFacade {
     private Boolean connected=false; 
     private String prt;
     
-    public void add(String name) {
-	partnerDAO.addPartnerById(name);
+    public void add(String name, String desc) {
+	partnerDAO.addPartnerById(name, desc);
     }
     
     public void delete(String name) {
