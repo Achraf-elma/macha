@@ -85,11 +85,11 @@ public class UserDAOPostgres extends UserDAO{
        
         public  ObservableList<User> getAll() {
 		Statement statement;
-                 for(int userid = 1; userid<20; userid++){
+                for(int userid = 1; userid<20; userid++){
 		try {
                       
                            
-                       System.out.println("x");
+                      
 			statement = coSql.createStatement();
 			String query = "SELECT * FROM machaUser WHERE userID = '" + userid +"'  ";
 			ResultSet resultset = statement.executeQuery(query);

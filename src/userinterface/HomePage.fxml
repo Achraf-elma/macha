@@ -19,8 +19,8 @@
       <Button fx:id="btnInvitations" layoutX="414.0" layoutY="145.0" mnemonicParsing="false" onAction="#viewInvitations" prefHeight="45.0" prefWidth="105.0" text="Invitations" />
       <Button fx:id="btnAccount" layoutX="133.0" layoutY="237.0" mnemonicParsing="false" onAction="#viewAccount" prefHeight="46.0" prefWidth="142.0" text="My Account" />
       <Button fx:id="btnMessages" layoutX="325.0" layoutY="237.0" mnemonicParsing="false" onAction="#viewMessages" prefHeight="46.0" prefWidth="141.0" text="My Messages" />
-      <Button fx:id="btnQuit" layoutX="247.0" layoutY="327.0" mnemonicParsing="false" onAction="#quitApp" prefHeight="45.0" prefWidth="105.0" text="Quit" />
-      <Label layoutX="247.0" layoutY="14.0" text="MACHA">
+      <Button fx:id="btnQuit" layoutX="247.0" layoutY="327.0" mnemonicParsing="false" onAction="#quitApp" prefHeight="45.0" prefWidth="105.0" text="Quit" textFill="RED" />
+      <Label layoutX="247.0" layoutY="14.0" text="MACHA" textFill="#0300ba">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
@@ -31,5 +31,6 @@
             <Image url="@../../assets/LogoMacha.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnAdmin" layoutX="26.0" layoutY="350.0" mnemonicParsing="false" onAction="#viewUserManagement" prefHeight="26.0" prefWidth="142.0" text="Admin Mgmt" textFill="#1e591e" />
    </children>
 </AnchorPane>
