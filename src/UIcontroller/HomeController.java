@@ -31,6 +31,10 @@ public class HomeController implements Initializable{
 
 	@FXML
 	private Button btnInvitations;
+	
+	@FXML
+	private Button btnPartners;
+
 
 	@FXML
 	private Button btnAccount;

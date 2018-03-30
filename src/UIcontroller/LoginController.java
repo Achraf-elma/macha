@@ -94,22 +94,28 @@ public class LoginController implements Initializable {
 		    }
 
 		 
-		 private void callUserIndex() throws IOException{
-	
-			
-                 }
-
 		 @FXML
-		    private void signup(ActionEvent e){
-			 
-		    	   display("Sign up button pressed");
+		 private void signup(ActionEvent e) throws IOException{
+					 Node  source = (Node)  e.getSource(); 
+		             Stage stage  = (Stage) source.getScene().getWindow();
+		             stage.close();
+		                          
+		             Stage nextStage = new Stage();
+		             nextStage.setTitle("User Account");
+		             Pane myPane = null;
+		             myPane = FXMLLoader.load(getClass().getResource("/userinterface/SignUp.fxml"));
+		
+		             Scene scene = new Scene(myPane);
+		             nextStage.setScene(scene);
+		             nextStage.show(); 
 		      
-		    }
+		 }
 		 
-		 	public void display(String msg)
-		 	{
+		 @FXML
+		 public void display(String msg)
+		 {
 		 		errorText.setText(msg);
-		 	}
+		 }
 		 	
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
