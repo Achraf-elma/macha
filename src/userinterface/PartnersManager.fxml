@@ -30,9 +30,8 @@
           </TableColumn>
           
           <TableColumn minWidth="0.0" prefWidth="197.0" text="WebSite">
-                     <cellValueFactory><PropertyValueFactory property="WebSite" /></cellValueFactory>
+                     <cellValueFactory><PropertyValueFactory property="website" /></cellValueFactory>
           </TableColumn>
-            <TableColumn prefWidth="154.0" text="WebSite" />
           
          
         </columns>

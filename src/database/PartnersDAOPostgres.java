@@ -27,13 +27,12 @@ public class PartnersDAOPostgres extends PartnersDAO{
 	this.coSql = coSql;
     }
         
-        public void addPartnerById(String name, String desc) {
+        public void addPartnerById(String name, String desc, String website) {
 		Statement statement;
-                //D
 		try {
 			statement = coSql.createStatement();
-			String query = "INSERT INTO partner(partnername, partnerinfo) VALUES('" 
-                                + name + "', '" + desc + "')";
+			String query = "INSERT INTO partner(partnername, partnerinfo, partnerwebsite) VALUES('" 
+                                + name + "', '" + desc + "', '" + website + "')";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -112,12 +111,12 @@ public class PartnersDAOPostgres extends PartnersDAO{
 		return PartnerData;
 
 	}
-        public void updatePartnerById(String name, String desc){
+        public void updatePartnerById(String name, String desc, String website){
             Statement statement;
 		try {
 			statement = coSql.createStatement();
 			String query = "UPDATE partner SET partnerinfo = '" + desc 
-                                + "' WHERE partnername = '" + name + "'";
+                                + "', partnerwebsite = '" + website + "' WHERE partnername = '" + name + "'";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
 			

@@ -34,6 +34,8 @@ public class PartnerAddController implements Initializable {
     @FXML
     private Button saveBtn;
     private PartnersFacade pf = new PartnersFacade();
+    @FXML
+    private TextField websiteTF;
 
     /**
      * Initializes the controller class.
@@ -45,7 +47,7 @@ public class PartnerAddController implements Initializable {
 
     @FXML
     private void saveAction(ActionEvent event) throws IOException {
-        pf.add(this.nameTF.getText(), this.descTF.getText());
+        pf.add(this.nameTF.getText(), this.descTF.getText(), this.websiteTF.getText());
         Node  source = (Node)  event.getSource(); 
         Stage stage  = (Stage) source.getScene().getWindow();
         stage.close();

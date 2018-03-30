@@ -59,8 +59,8 @@ public class Partner {
          this.infoProperty.set(info);
     }
     
-    public void getWebsite(String website) {
-        this.websiteProperty.set(website);
+    public String getWebsite() {
+        return this.websiteProperty.get();
     }
 
     /**

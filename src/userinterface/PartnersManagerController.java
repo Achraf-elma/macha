@@ -61,7 +61,7 @@ public class PartnersManagerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-       //PartnerData.add(new Partner("Smith","John"));
+       //PartnerData.add(new Partner("Smith","John", "xx"));
        TVPartner.getItems().addAll(PartnerData);
     }    
 
