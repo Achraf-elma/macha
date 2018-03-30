@@ -28,6 +28,9 @@ public abstract class EventDAO {
         public abstract void createNewEvent(String eventName, int categid, String location, String date, float price, int capacity, String description);			
 	public abstract ObservableList<Event> getAllEvents();
         public abstract Event createEventById(int eventid);
+        public abstract void deleteEventByName(String name);
+    
+
 
 	//public abstract Invitation createInvitation(User senderId, User receiverId, Event event);
 	

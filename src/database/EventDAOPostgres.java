@@ -104,6 +104,19 @@ public class EventDAOPostgres extends EventDAO {
          return event;
     }
     
+    public void deleteEventByName(String name){
+        Statement statement;
+		try {
+			statement = coSql.createStatement();
+			String query = "DELETE FROM events WHERE eventname = '" + name + "'";
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
+    
+    }
+    
     
     public ObservableList<Event> getAllEvents(){
          try {

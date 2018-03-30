@@ -85,7 +85,7 @@ public class UserDAOPostgres extends UserDAO{
        
         public  ObservableList<User> getAll() {
 		Statement statement;
-                 for(int userid = 1; userid<6; userid++){
+                 for(int userid = 1; userid<20; userid++){
 		try {
                       
                            
@@ -108,8 +108,9 @@ public class UserDAOPostgres extends UserDAO{
 					this.lastname = resultset.getString(5);
 					this.address = resultset.getString(6);
 				}
-				
+			
 				this.u = new User(nick, firstname, lastname);
+                                
 			}
 			
 		
@@ -118,12 +119,40 @@ public class UserDAOPostgres extends UserDAO{
 			
 			e.printStackTrace();
 		} 
+                 if (u != null){
                  PersonData.add(u);
+                 }
                 }
 		return PersonData;
 
 	}
 
+        
+        public void addUserById(String name, String firstname, String lastname, String mail) {
+		Statement statement;
+                //D
+		try {
+			statement = coSql.createStatement();
+			String query = "INSERT INTO machauser(nickname, userfirstname, userlastname, useradress) "
+                                + "VALUES('" + name + "', '" + firstname + "', '" + lastname + "', '" + mail + "')";
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+	}
+        
+        public void deleteUserById(String name){
+            Statement statement;
+		try {
+			statement = coSql.createStatement();
+                        System.out.println("OOOO");
+			String query = "DELETE FROM machauser WHERE nickname = '" + name + "'";
+			statement.executeUpdate(query);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
+        }
 	/*public void dispaly(String nick) {
 		super.display(nick);
 	}*/
