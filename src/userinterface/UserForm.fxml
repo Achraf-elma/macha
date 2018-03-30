@@ -15,7 +15,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="106.0" layoutY="80.0" prefHeight="26.0" prefWidth="386.0" text="Sign up to discover events and joining your friends">
+      <Label layoutX="110.0" layoutY="98.0" prefHeight="26.0" prefWidth="386.0" text="Sign up to discover events and joining your friends">
          <font>
             <Font size="17.0" />
          </font>
@@ -55,12 +55,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nicknameField" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="160.0" prefHeight="26.0" prefWidth="286.0" promptText="Your nickname" />
+      <TextField fx:id="nicknameField" alignment="CENTER_RIGHT" layoutX="218.0" layoutY="160.0" prefHeight="26.0" prefWidth="286.0" promptText="Your nickname" />
       <TextField fx:id="emailField" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="283.0" prefHeight="26.0" prefWidth="286.0" promptText="Your email adress" />
-      <Label fx:id="errorLabel" layoutX="259.0" layoutY="118.0" prefHeight="26.0" prefWidth="96.0" text="Error message" textAlignment="CENTER" textFill="RED">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

@@ -20,6 +20,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import userinterface.UserIndexUI;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 
 public class LoginController implements Initializable {
 
@@ -72,7 +73,18 @@ public class LoginController implements Initializable {
 		    	   if (ulf.getConnected())
 		    	   {
 		    		   display("Connected as " + username + " .");
-		    		  callUserIndex();
+                                   Node  source = (Node)  e.getSource(); 
+                                    Stage stage  = (Stage) source.getScene().getWindow();
+                                 stage.close();
+			                            
+                            Stage nextStage = new Stage();
+                            nextStage.setTitle("User Account");
+                            Pane myPane = null;
+                            myPane = FXMLLoader.load(getClass().getResource("/userinterface/UserAccount.fxml"));
+
+                            Scene scene = new Scene(myPane);
+                            nextStage.setScene(scene);
+                            nextStage.show(); 
 		    	   }
 		    	   else
 		    	   {
@@ -84,16 +96,7 @@ public class LoginController implements Initializable {
 		 
 		 private void callUserIndex() throws IOException{
 	
-			 
-			 Stage stage = new Stage();
-			    stage.setTitle("User List");
-                             Pane myPane = null;
-                            // myPane = FXMLLoader.load(getClass().getResource("/userinterface.userView/UserList.fxml"));
-			              
-			    Scene scene = new Scene(myPane);
-			    stage.setScene(scene);
-			    
-			    stage.show();    
+			
                  }
 
 		 @FXML
