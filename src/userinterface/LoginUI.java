@@ -26,7 +26,7 @@ public class LoginUI extends Application {
 		//FXMLLoader root = new FXMLLoader(getClass().getResource("EventCreationUI.fxml"));
 		//root.setController(new LoginController());
 
-		FXMLLoader root = new FXMLLoader(getClass().getResource("PartnersManager.fxml"));
+		FXMLLoader root = new FXMLLoader(getClass().getResource("EventCreationUI.fxml"));
 		//root.setController(new LoginController());
 		Parent parent = root.load();
 		Scene scene = new Scene(parent);

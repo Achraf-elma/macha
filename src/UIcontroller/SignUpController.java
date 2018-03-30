@@ -51,38 +51,43 @@ public class SignUpController implements Initializable {
 			private Button validateNewUserButton;
 		
 			@FXML
-			private Label lebel;
+			private Label errorLabel;
 		
 			 @FXML
 			 private void welcome(){
 				 
-				
-				 
+				 errorLabel.setText("");
 				 validateNewUserButton.setOnAction(new EventHandler<ActionEvent>() {
 				            @Override
 				            public void handle(ActionEvent event) {
 				            	
-				            	
-				            	System.out.println(nicknameField.getText());
-				            	System.out.println(firstNameField.getText());
-				            	System.out.println(lastNameField.getText());
-				            	System.out.println(emailField.getText());
-				            	System.out.println(passwordField.getText());
-				            	System.out.println(passwordConfirmField.getText());
-				            	
 				            	if(!nicknameField.getText().isEmpty() && !firstNameField.getText().isEmpty() && !lastNameField.getText().isEmpty() && !emailField.getText().isEmpty() && !passwordField.getText().isEmpty() && !passwordConfirmField.getText().isEmpty()){
 				            		if(passwordField.getText().equals(passwordConfirmField.getText())){
 				            			
-				            			Date birthDate = Date.valueOf(birthDatePicker.getValue());
+				            			Date birthDate;
+				            			if(birthDatePicker.getValue() != null){
+				            				birthDate = Date.valueOf(birthDatePicker.getValue());
+				            			}else{
+				            				birthDate = null;
+				            			}
 				            			
 				            			sf.signUp(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameField.getText(),birthDate,emailField.getText());
 				            			
+				            			nicknameField.setText("");
+						            	firstNameField.setText("");
+						            	lastNameField.setText("");
+						            	emailField.setText("");
+						            	
+						            	
 				            			
-				            			System.out.println("ok");
 				            			
+				            		}else{
+				            			errorLabel.setText("Erreur : Invalid password confirmation");
 				            		}
 				            	}else{
-				            		System.out.println("Erreur champ manquant");
+				            		passwordField.setText("");
+					            	passwordConfirmField.setText("");
+				            		errorLabel.setText("Error : Missing Field");
 				            	}
 				            	
 				        }
