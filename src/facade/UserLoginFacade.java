@@ -18,7 +18,7 @@ public class UserLoginFacade {
 			setConnected(false);
 		}
         }
-        
+ 
 	public ObservableList<User> getAllUser(){
             return ud.getAll();
         }
@@ -29,7 +29,15 @@ public class UserLoginFacade {
 		return connected;
 	}
 
-	public void setConnected(Boolean connected) {
+        public void setConnected(Boolean connected) {
 		this.connected = connected;
 	}
+        
+	 public void add(String name, String firstname, String lastname, String address) {
+	ud.addUserById(name, firstname, lastname, address);
+             }
+    
+    public void delete(String name) {
+	ud.deleteUserById(name);
+    }
 }

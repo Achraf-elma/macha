@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.userView.UserListController">
+<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.UserManagementController">
     <children>
         <Button fx:id="button" layoutX="416.0" layoutY="464.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="69.0" text="Close" />
       <TableView fx:id="TVPerson" layoutX="15.0" layoutY="127.0" prefHeight="284.0" prefWidth="518.0" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="127.0">
@@ -32,5 +32,15 @@
          </font>
       </Label>
       <Line endX="100.0" layoutX="45.0" layoutY="87.0" startX="-100.0" />
+      <Button fx:id="addBTN" layoutX="16.0" layoutY="427.0" mnemonicParsing="false" onAction="#addAccount" text="Add" textFill="#19c64d">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="banBTN" layoutX="118.0" layoutY="429.0" mnemonicParsing="false" onAction="#removeAccount" prefHeight="40.0" prefWidth="132.0" text="Ban Account" textFill="#d01515">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

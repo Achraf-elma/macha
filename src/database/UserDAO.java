@@ -29,7 +29,8 @@ public abstract class UserDAO {
         public abstract ObservableList<User> getAll();
 	
 	public abstract User createNewUser(String userid, String pwd, String fn, String ln, Date birthDate, String adress);
-	
+	public abstract void addUserById(String name, String firstname, String lastname, String mail);
+        public abstract void deleteUserById(String name);
 	/*public void display(String nickname) {
 		Connection coSql = ConnectionPostgreSQL.getInstance();
 		Statement statement;
