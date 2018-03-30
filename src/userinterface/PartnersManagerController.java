@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
@@ -71,6 +72,10 @@ public class PartnersManagerController implements Initializable {
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/userinterface/PartnerDelete.fxml"));
         
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
+        
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show(); 
@@ -79,7 +84,7 @@ public class PartnersManagerController implements Initializable {
     @FXML
     private void getAll(ActionEvent event) {
         textArea.setText(pf.getAll());
-    
+        TVPartner.getItems().addAll(PartnerData);
     }
     
     public static void refresh_table(TableView table)
@@ -97,6 +102,10 @@ public class PartnersManagerController implements Initializable {
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/userinterface/PartnerUpdate.fxml"));
         
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
+        
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show(); 
@@ -110,9 +119,15 @@ public class PartnersManagerController implements Initializable {
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/userinterface/PartnerAdd.fxml"));
         
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
+        
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show(); 
+        
+        
     }
       Stage stage;
     void setStage(Stage stg){stage=stg;}

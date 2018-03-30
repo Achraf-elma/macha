@@ -77,8 +77,6 @@ public class PartnersDAOPostgres extends PartnersDAO{
                  for(int i = 1; i<100; i++){
 		try {
                       
-                           
-                   
 			statement = coSql.createStatement();
 			String query = "SELECT * FROM partner WHERE partnerID = '" + i +"'  ";
 			ResultSet resultset = statement.executeQuery(query);
@@ -88,8 +86,7 @@ public class PartnersDAOPostgres extends PartnersDAO{
 				this.u = null;
 			}else{
 				{
-                                      System.out.println("yes");
-					System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
+					//System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
 					this.partnerName = resultset.getString(2);
 					this.info = resultset.getString(3);
 					
