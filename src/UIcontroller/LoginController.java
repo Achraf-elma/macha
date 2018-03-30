@@ -81,7 +81,8 @@ public class LoginController implements Initializable {
                             nextStage.setTitle("User Account");
                             Pane myPane = null;
                             myPane = FXMLLoader.load(getClass().getResource("/userinterface/HomePage.fxml"));
-
+                            
+                            
                             Scene scene = new Scene(myPane);
                             nextStage.setScene(scene);
                             nextStage.show(); 

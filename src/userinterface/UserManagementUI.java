@@ -14,6 +14,7 @@ public class UserManagementUI extends Application {
     public void start(Stage stage) throws Exception {
  
         FXMLLoader loader = new FXMLLoader(UserManagementUI.class.getResource("UserManagement.fxml"));
+        
         Parent root = (Parent)loader.load();
         final UserManagementController controller = loader.getController();
         controller.setStage(stage);

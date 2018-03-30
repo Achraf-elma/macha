@@ -48,6 +48,9 @@ public class HomeController implements Initializable{
 	@FXML
 	private Button btnQuit;
 
+        @FXML
+	private Button btnAdmin;
+
 	@FXML
 	private void viewEvents(ActionEvent e) throws IOException{
 		
@@ -118,6 +121,20 @@ public class HomeController implements Initializable{
         nextStage.show(); 
 	}
 	
+        @FXML
+	private void viewUserManagement(ActionEvent e)throws IOException{
+		
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("User Management");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/UserManagement.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
+        
 	@FXML
 	private void quitApp(ActionEvent e){
 		Node  source = (Node)  e.getSource(); 
