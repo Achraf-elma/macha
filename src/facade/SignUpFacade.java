@@ -13,13 +13,9 @@ public class SignUpFacade {
 
 	private AbstractDAOFactory af = new PostgresFactory();
 	private UserDAO ud = af.createUserDAO();
-	
-	public void signUp(){
-		System.out.println("OK");
-	}
-	
+
 	public void signUp(String userNick, String pwd, String userFirstName, String userLastName, Date dateBirth, String adress) {
-		System.out.println("OK FACADE");
+
 		User userCreated = ud.createById(userNick, pwd, userFirstName, userLastName, (java.sql.Date) dateBirth, adress);
 	
 	}

@@ -33,11 +33,11 @@ public class UserDAOPostgres extends UserDAO{
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "SELECT * FROM machaUser WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
+			String query = "SELECT * FROM machauser WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
 			ResultSet resultset = statement.executeQuery(query);
 			System.out.println("ok");
 			if(!resultset.next()){
-                            System.out.println("null");
+                System.out.println("null");
 				this.u = null;
 			}else{
 				while(resultset.next()) {
@@ -67,7 +67,6 @@ public class UserDAOPostgres extends UserDAO{
 
 	public User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
 		Statement statement;
-		System.out.println("OK REQUEST");
 		
 		try {
 			statement = coSql.createStatement();
