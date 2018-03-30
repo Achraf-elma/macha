@@ -29,6 +29,7 @@ public class PartnersDAOPostgres extends PartnersDAO{
         
         public void addPartnerById(String name, String desc) {
 		Statement statement;
+                //D
 		try {
 			statement = coSql.createStatement();
 			String query = "INSERT INTO partner(partnername, partnerinfo) VALUES('" 
