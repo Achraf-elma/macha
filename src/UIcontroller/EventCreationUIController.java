@@ -49,7 +49,7 @@ public class EventCreationUIController implements Initializable {
     /**
      * Initializes the controller class.
      */ private String eventName = " ";
-        private String categName = " ";
+        private int categId = 1;
 	private String location = " ";
         private String date = " ";
         private float price = 0;
@@ -66,14 +66,13 @@ public class EventCreationUIController implements Initializable {
     @FXML
     private void addEvent(ActionEvent event) {
         eventName = nameField.getText();
-        categName = " test ";
         location = locationField.getText();
         date = datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         price = Float.parseFloat(priceField.getText());
         capacity = Integer.parseInt(capacityField.getText());
         description = descriptionField.getText();
         
-        uef.createEvent(eventName, categName, location, date, price, capacity, description);
+        uef.createEvent(eventName, categId, location, date, price, capacity, description);
         
         System.out.println("Event added ! ");
     }

@@ -15,8 +15,8 @@ public class SignUpFacade {
 	private UserDAO ud = af.createUserDAO();
 
 	public void signUp(String userNick, String pwd, String userFirstName, String userLastName, Date dateBirth, String adress) {
-
-		User userCreated = ud.createById(userNick, pwd, userFirstName, userLastName, (java.sql.Date) dateBirth, adress);
+		System.out.println("OK FACADE");
+		User userCreated = ud.createNewUser(userNick, pwd, userFirstName, userLastName, (java.sql.Date) dateBirth, adress);
 	
 	}
 	/*public void display(String nick) {

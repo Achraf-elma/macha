@@ -65,7 +65,7 @@ public class UserDAOPostgres extends UserDAO{
 
 	
 
-	public User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
+	public User createNewUser(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
 		Statement statement;
 		
 		try {

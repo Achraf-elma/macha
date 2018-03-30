@@ -33,12 +33,18 @@ public class EventDAOPostgres extends EventDAO {
 	this.coSql = coSql;
     }
         
-    public void createNewEvent(String eventName, String categ, String location, String date, float price, int capacity, String description){
+    public void createNewEvent(String eventName, int categid, String location, String date, float price, int capacity, String description){
        
         
             try {
 		statement = coSql.createStatement();
-		String query = "INSERT INTO events VALUES('" + eventName + "','" + categ + "','" + location + "', '" + date + "', " + price + ",'" + capacity + "','" + description +"')";
+                String maxId = "SELECT MAX(eventid) FROM events";
+                ResultSet result = statement.executeQuery(maxId);
+                /*int max = 0;
+                while(result.next()){
+                    max = Integer.parseInt(result.getString(1)) + 1;
+                }*/
+		String query = "INSERT INTO events(eventname, eventdate, eventprice, eventadress, categoryid, organizatorid, maxparticipants, eventdescription)  VALUES('" + eventName + "','" + date + "'," + price + ", '" + location + "', " + categid + "," + "1," + capacity + ",'" + description +"')";
                 statement.executeUpdate(query);
 			
 		} 
