@@ -36,7 +36,7 @@ public class SignUpController implements Initializable {
 			private TextField lastNameField;
 			
 			@FXML
-			private TextField emailNameField;
+			private TextField emailField;
 			
 			@FXML
 			private PasswordField passwordField;
@@ -62,13 +62,29 @@ public class SignUpController implements Initializable {
 				            @Override
 				            public void handle(ActionEvent event) {
 				            	
-				            	if(!nicknameField.getText().isEmpty() && !firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && !emailNameField.getText().isEmpty() && !passwordField.getText().isEmpty() && !passwordConfirmField.getText().isEmpty()){
-				            		if(passwordField.getText() == passwordConfirmField.getText()){
+				            	
+				            	System.out.println(nicknameField.getText());
+				            	System.out.println(firstNameField.getText());
+				            	System.out.println(lastNameField.getText());
+				            	System.out.println(emailField.getText());
+				            	System.out.println(passwordField.getText());
+				            	System.out.println(passwordConfirmField.getText());
+				            	
+				            	if(!nicknameField.getText().isEmpty() && !firstNameField.getText().isEmpty() && !lastNameField.getText().isEmpty() && !emailField.getText().isEmpty() && !passwordField.getText().isEmpty() && !passwordConfirmField.getText().isEmpty()){
+				            		if(passwordField.getText().equals(passwordConfirmField.getText())){
+				            			
 				            			Date birthDate = Date.valueOf(birthDatePicker.getValue());
-				            			sf.signUp(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameField.getText(),birthDate,emailNameField.getText());
+				            			
+				            			sf.signUp(nicknameField.getText(),passwordField.getText(),firstNameField.getText(),lastNameField.getText(),birthDate,emailField.getText());
+				            			
+				            			
 				            			System.out.println("ok");
+				            			
 				            		}
+				            	}else{
+				            		System.out.println("Erreur champ manquant");
 				            	}
+				            	
 				        }
 				 });
 				 
