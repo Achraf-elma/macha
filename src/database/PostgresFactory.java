@@ -17,6 +17,11 @@ public class PostgresFactory extends AbstractDAOFactory{
         public EventDAO createEventDAO() {
             return new EventDAOPostgres(coSql);
         }
+   
+    public InvitationDAO createInvitationDAO() {
+         return new InvitationDAOPostgres(coSql);
+    }
+
 
 }
 // Connection here

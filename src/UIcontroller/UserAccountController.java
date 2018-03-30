@@ -49,6 +49,11 @@ public class UserAccountController implements Initializable {
 	@FXML
 	private Button validateNewPW;
 	
+	@FXML
+	private Button deleteAccountButton;
+	
+	
+	
 	private UserAcountFacade uaf = new UserAcountFacade();
 
 	 @FXML

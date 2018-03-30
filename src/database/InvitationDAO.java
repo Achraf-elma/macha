@@ -13,13 +13,13 @@ public abstract class InvitationDAO {
 	private Invitation i;
 	protected User sender;
 	protected User receiver;
-	//private Event event;
+	private Event event;
 	private Connection coSql;
 	
 	
 
 			
-	public abstract Invitation createInvitation(User senderId, User receiverId);
+	public abstract Invitation createInvitation(User senderId, User receiverId,Event event);
 	
 
 	//public abstract Invitation createInvitation(User senderId, User receiverId, Event event);
