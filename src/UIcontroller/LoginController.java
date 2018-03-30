@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -39,7 +40,7 @@ public class LoginController implements Initializable {
 		private PasswordField txtPassWord ;
 		
 		@FXML
-		private TextArea txtArea;
+		private Label errorText;
 		
 		
 		// Config
@@ -72,15 +73,14 @@ public class LoginController implements Initializable {
 		    	   
 		    	   if (ulf.getConnected())
 		    	   {
-		    		   display("Connected as " + username + " .");
-                                   Node  source = (Node)  e.getSource(); 
-                                    Stage stage  = (Stage) source.getScene().getWindow();
-                                 stage.close();
+                            Node  source = (Node)  e.getSource(); 
+                            Stage stage  = (Stage) source.getScene().getWindow();
+                            stage.close();
 			                            
                             Stage nextStage = new Stage();
                             nextStage.setTitle("User Account");
                             Pane myPane = null;
-                            myPane = FXMLLoader.load(getClass().getResource("/userinterface/UserAccount.fxml"));
+                            myPane = FXMLLoader.load(getClass().getResource("/userinterface/HomePage.fxml"));
 
                             Scene scene = new Scene(myPane);
                             nextStage.setScene(scene);
@@ -88,7 +88,7 @@ public class LoginController implements Initializable {
 		    	   }
 		    	   else
 		    	   {
-		    		   display("Failed");
+		    		   display("Wrong identifier/password");
 		    	   }
 		      }
 		    }
@@ -108,12 +108,12 @@ public class LoginController implements Initializable {
 		 
 		 	public void display(String msg)
 		 	{
-		 	  txtArea.appendText(msg + "\n");
+		 		errorText.setText(msg);
 		 	}
 		 	
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
-			
+			errorText.setText("");
 		}
 }
