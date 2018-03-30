@@ -29,7 +29,7 @@ public class UserAccountUI extends Application {
 			private void initUserAccountLayout() throws IOException {
 
 				FXMLLoader root = new FXMLLoader(getClass().getResource("UserAccount.fxml"));
-				//root.setController(new InvitationController());
+				root.setController(new UserAccountController());
 				Parent parent = root.load();
 				Scene scene = new Scene(parent);
 				primaryStage.setTitle("Your profile");
