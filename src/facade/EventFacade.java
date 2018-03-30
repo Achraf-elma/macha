@@ -22,6 +22,10 @@ public class EventFacade {
     public ObservableList<Event> getAllEvents(){
             return ed.getAllEvents();
         }
+    
+    public void delete(String name) {
+	ed.deleteEventByName(name);
+    }
         
     public Event getEventById(int eventid){
         return ed.createEventById(eventid);
