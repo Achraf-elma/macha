@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="userinterface.PartnerAddController">
+    <stylesheets>
+        <URL value="@partneradd.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="258.0" layoutY="14.0" text="Add a Partner" />
+      <Label layoutX="282.0" layoutY="88.0" text="Name" />
+      <Label layoutX="265.0" layoutY="183.0" text="Description" />
+      <TextField fx:id="nameTF" layoutX="217.0" layoutY="105.0" />
+      <TextField fx:id="descTF" layoutX="217.0" layoutY="200.0" />
+      <Button fx:id="saveBtn" layoutX="277.0" layoutY="268.0" mnemonicParsing="false" onAction="#saveAction" text="Save" />
+   </children>
+</AnchorPane>

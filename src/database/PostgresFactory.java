@@ -10,9 +10,13 @@ public class PostgresFactory extends AbstractDAOFactory{
 		return new UserDAOPostgres(coSql);
 	}
         
-        public PartnersDAO createPartnerDAO() {
+    public PartnersDAO createPartnerDAO() {
 		return new PartnersDAOPostgres(coSql);
 	}
+        
+        public EventDAO createEventDAO() {
+            return new EventDAOPostgres(coSql);
+        }
 
 }
 // Connection here

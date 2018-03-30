@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.PartnerUpdateController">
+    <stylesheets>
+        <URL value="@partnerupdate.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="255.0" layoutY="14.0" text="Update Partner" />
+      <Label layoutX="282.0" layoutY="47.0" text="Name" />
+      <Label layoutX="265.0" layoutY="101.0" text="Description" />
+      <TextField fx:id="descTF" layoutX="220.0" layoutY="118.0" />
+      <Button fx:id="saveBtn" layoutX="279.0" layoutY="173.0" mnemonicParsing="false" onAction="#update" text="Save" />
+      <TextField fx:id="nameTF" layoutX="217.0" layoutY="64.0" />
+   </children>
+</AnchorPane>

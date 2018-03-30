@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Date;
 
 import database.ConnectionPostgreSQL;
 
@@ -13,7 +14,7 @@ public abstract class UserDAO {
 	
 	private String nom;
 	private String mdp;
-	private String dateOfBirth;
+	private Date dateOfBirth;
 	private String firstname;
 	private String lastname;
 	private String address;
@@ -24,6 +25,8 @@ public abstract class UserDAO {
 
 			
 	public abstract User createById(String userid, String pwd);
+	
+	public abstract User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress);
 	
 	/*public void display(String nickname) {
 		Connection coSql = ConnectionPostgreSQL.getInstance();

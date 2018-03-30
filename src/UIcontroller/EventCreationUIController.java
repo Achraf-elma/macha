@@ -15,6 +15,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import facade.*;
+import java.text.*;
+import java.time.format.*;
+import javafx.scene.control.DatePicker;
 
 /**
  * FXML Controller class
@@ -30,8 +34,6 @@ public class EventCreationUIController implements Initializable {
     @FXML
     private TextField locationField;
     @FXML
-    private TextField dateField;
-    @FXML
     private TextField priceField;
     @FXML
     private TextField capacityField;
@@ -40,16 +42,46 @@ public class EventCreationUIController implements Initializable {
     @FXML
     private ListView<?> categList;
 
+    @FXML
+    private DatePicker datePicker;
+                
+                
     /**
      * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+     */ private String eventName = " ";
+        private String categName = " ";
+	private String location = " ";
+        private String date = " ";
+        private float price = 0;
+        private int capacity = 0;
+        private String description = " ";
+		
+		//
+		
+	private UserEventFormFacade uef = new UserEventFormFacade();
+        
+        
+       
 
     @FXML
     private void addEvent(ActionEvent event) {
+        eventName = nameField.getText();
+        categName = " test ";
+        location = locationField.getText();
+        date = datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        price = Float.parseFloat(priceField.getText());
+        capacity = Integer.parseInt(capacityField.getText());
+        description = descriptionField.getText();
+        
+        uef.createEvent(eventName, categName, location, date, price, capacity, description);
+        
+        System.out.println("Event added ! ");
+    }
+    
+    
+     @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
     }
     
 }
