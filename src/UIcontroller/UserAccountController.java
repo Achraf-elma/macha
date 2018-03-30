@@ -59,8 +59,6 @@ public class UserAccountController implements Initializable {
 	 @FXML
 	 private void getUser() throws IOException{
 	    	   
-	    	   
-
 	    	  
 	   }
 	    
@@ -71,5 +69,7 @@ public class UserAccountController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		
+		
 	}
 }
