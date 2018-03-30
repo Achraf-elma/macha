@@ -20,6 +20,12 @@ public class Event {
     private StringProperty nameProperty;
     private StringProperty locationProperty;
     private StringProperty categProperty;
+    private StringProperty descriptionProperty;
+    
+    private StringProperty dateProperty;
+    private StringProperty priceProperty;
+    private StringProperty capacityProperty;
+    private StringProperty organizatorProperty;
     
     
     private String name;
@@ -43,10 +49,11 @@ public class Event {
         this.description = description;
     }
     
-    public Event(String name, String categ, String location){
+    public Event(String name, String categ, String location, String description){
         this.nameProperty = new SimpleStringProperty(name);
         this.categProperty = new SimpleStringProperty(categ);
         this.locationProperty = new SimpleStringProperty(location);
+        this.descriptionProperty = new SimpleStringProperty(description);
     }
 
     /**
@@ -95,69 +102,69 @@ public class Event {
      * @return the date
      */
     public String getDate() {
-        return date;
+        return dateProperty.get();
     }
 
     /**
      * @param date the date to set
      */
     public void setDate(String date) {
-        this.date = date;
+        this.dateProperty.set(date);
     }
 
     /**
      * @return the price
      */
-    public float getPrice() {
-        return price;
+    public String getPrice() {
+        return priceProperty.get();
     }
 
     /**
      * @param price the price to set
      */
     public void setPrice(float price) {
-        this.price = price;
+        this.priceProperty.set(String.valueOf(price));
     }
 
     /**
      * @return the capacity
      */
-    public int getCapacity() {
-        return capacity;
+    public String getCapacity() {
+        return capacityProperty.get();
     }
 
     /**
      * @param capacity the capacity to set
      */
     public void setCapacity(int capacity) {
-        this.capacity = capacity;
+        this.capacityProperty.set(String.valueOf(capacity));
     }
 
     /**
      * @return the description
      */
     public String getDescription() {
-        return description;
+        return descriptionProperty.get();
     }
 
     /**
      * @param description the description to set
      */
     public void setDescription(String description) {
-        this.description = description;
+        this.descriptionProperty.set(description);
     }
 
     /**
      * @return the organizator
      */
-    public int getOrganizator() {
-        return organizator;
+    public String getOrganizator() {
+        return organizatorProperty.get();
     }
 
     /**
      * @param organizator the organizator to set
      */
     public void setOrganizator(int organizator) {
-        this.organizator = organizator;
+        this.organizatorProperty.set(String.valueOf(organizator));
     }
 }
