@@ -26,13 +26,18 @@ public class LoginUI extends Application {
 		//FXMLLoader root = new FXMLLoader(getClass().getResource("EventCreationUI.fxml"));
 		//root.setController(new LoginController());
 
-		FXMLLoader root = new FXMLLoader(getClass().getResource("LoginTest.fxml"));
-		root.setController(new LoginController());
+		FXMLLoader root = new FXMLLoader(getClass().getResource("PartnersManager.fxml"));
+		//root.setController(new LoginController());
 		Parent parent = root.load();
 		Scene scene = new Scene(parent);
 		primaryStage.setTitle("Login Interface");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+                
+                
+                
+        
+        
 	}
 
 	public static void main(String[] args) {

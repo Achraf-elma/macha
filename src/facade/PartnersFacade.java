@@ -1,6 +1,7 @@
 package facade;
 import database.*;
 import businessLogic.*;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -24,8 +25,12 @@ public class PartnersFacade {
 	this.prt = partnerDAO.getAll();
         return this.prt;
     }
-    
+    public ObservableList<Partner> getAllPartner(){
+        return partnerDAO.getAllPartner();
+    }
     public void update(String name, String desc) {
 	partnerDAO.updatePartnerById(name,desc);
     }
+
+    
 }

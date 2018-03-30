@@ -3,6 +3,7 @@ package database;
 import businessLogic.Partner;
 import java.sql.Connection;
 import database.ConnectionPostgreSQL;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -17,4 +18,5 @@ public abstract class PartnersDAO {
     public abstract void deletePartnerById(String name);
     public abstract String getAll();
     public abstract void updatePartnerById(String name, String desc);
+    public abstract ObservableList<Partner> getAllPartner();
 }

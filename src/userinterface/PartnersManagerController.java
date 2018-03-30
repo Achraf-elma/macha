@@ -5,10 +5,12 @@
  */
 package userinterface;
 
+import businessLogic.Partner;
 import facade.PartnersFacade;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -42,12 +46,22 @@ public class PartnersManagerController implements Initializable {
     @FXML
     private Button updateBtn;
 
+    
+    
+      
+    private ObservableList<Partner> PartnerData = pf.getAllPartner();
+     
+    @FXML
+    private TableView<Partner> TVPartner;
+ 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+       PartnerData.add(new Partner("Smith","John"));
+       TVPartner.getItems().addAll(PartnerData);
     }    
 
     @FXML
@@ -65,7 +79,16 @@ public class PartnersManagerController implements Initializable {
     @FXML
     private void getAll(ActionEvent event) {
         textArea.setText(pf.getAll());
+    
     }
+    
+    public static void refresh_table(TableView table)
+{
+        for (int i = 0; i < table.getColumns().size(); i++) {
+    ((TableColumn)(table.getColumns().get(i))).setVisible(false);
+    ((TableColumn)(table.getColumns().get(i))).setVisible(true);
+    }
+}
 
     @FXML
     private void update(ActionEvent event) throws IOException {
@@ -77,6 +100,7 @@ public class PartnersManagerController implements Initializable {
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show(); 
+       
     }
 
     @FXML
@@ -90,5 +114,6 @@ public class PartnersManagerController implements Initializable {
         stage.setScene(scene);
         stage.show(); 
     }
-    
+      Stage stage;
+    void setStage(Stage stg){stage=stg;}
 }
