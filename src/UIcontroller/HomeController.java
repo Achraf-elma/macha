@@ -50,9 +50,7 @@ public class HomeController implements Initializable{
 
 	@FXML
 	private void viewEvents(ActionEvent e) throws IOException{
-		Node  source = (Node)  e.getSource(); 
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+		
                     
         Stage nextStage = new Stage();
         nextStage.setTitle("Events");
@@ -66,9 +64,7 @@ public class HomeController implements Initializable{
 	
 	@FXML
 	private void viewPartners(ActionEvent e)throws IOException{
-		Node  source = (Node)  e.getSource(); 
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+		
                     
         Stage nextStage = new Stage();
         nextStage.setTitle("Partners");
@@ -82,9 +78,7 @@ public class HomeController implements Initializable{
 	
 	@FXML
 	private void viewInvitations(ActionEvent e)throws IOException{
-		Node  source = (Node)  e.getSource(); 
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+		
                     
         Stage nextStage = new Stage();
         nextStage.setTitle("Invitations");
@@ -98,9 +92,7 @@ public class HomeController implements Initializable{
 	
 	@FXML
 	private void viewAccount(ActionEvent e)throws IOException{
-		Node  source = (Node)  e.getSource(); 
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+		
                     
         Stage nextStage = new Stage();
         nextStage.setTitle("User Account");
@@ -114,9 +106,7 @@ public class HomeController implements Initializable{
 	
 	@FXML
 	private void viewMessages(ActionEvent e)throws IOException{
-		Node  source = (Node)  e.getSource(); 
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+		
                     
         Stage nextStage = new Stage();
         nextStage.setTitle("Messages");
