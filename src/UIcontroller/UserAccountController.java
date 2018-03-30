@@ -49,13 +49,16 @@ public class UserAccountController implements Initializable {
 	@FXML
 	private Button validateNewPW;
 	
+	@FXML
+	private Button deleteAccountButton;
+	
+	
+	
 	private UserAcountFacade uaf = new UserAcountFacade();
 
 	 @FXML
 	 private void getUser() throws IOException{
 	    	   
-	    	   
-
 	    	  
 	   }
 	    
@@ -66,5 +69,7 @@ public class UserAccountController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		
+		
 	}
 }

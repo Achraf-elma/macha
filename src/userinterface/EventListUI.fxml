@@ -20,14 +20,17 @@
       </Label>
       <TableView fx:id="eventTable" layoutX="14.0" layoutY="59.0" prefHeight="321.0" prefWidth="568.0">
         <columns>
-          <TableColumn prefWidth="168.0" text="Event name">
+          <TableColumn prefWidth="184.0" text="Event name">
              <cellValueFactory><PropertyValueFactory property="name" /></cellValueFactory>
           </TableColumn>
-          <TableColumn prefWidth="221.0" text="Description">
+          <TableColumn prefWidth="84.0" text="Category">
                <cellValueFactory><PropertyValueFactory property="categ" /></cellValueFactory>
           </TableColumn>
-          <TableColumn minWidth="0.0" prefWidth="178.0" text="Location">
+          <TableColumn minWidth="0.0" prefWidth="105.0" text="Location">
                <cellValueFactory><PropertyValueFactory property="location" /></cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="193.0" text="Description">
+                <cellValueFactory><PropertyValueFactory property="description" /></cellValueFactory>
           </TableColumn>
         </columns>
       </TableView>

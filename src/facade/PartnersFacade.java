@@ -13,8 +13,8 @@ public class PartnersFacade {
     private Boolean connected=false; 
     private String prt;
     
-    public void add(String name, String desc) {
-	partnerDAO.addPartnerById(name, desc);
+    public void add(String name, String desc, String website) {
+	partnerDAO.addPartnerById(name, desc, website);
     }
     
     public void delete(String name) {
@@ -28,8 +28,8 @@ public class PartnersFacade {
     public ObservableList<Partner> getAllPartner(){
         return partnerDAO.getAllPartner();
     }
-    public void update(String name, String desc) {
-	partnerDAO.updatePartnerById(name,desc);
+    public void update(String name, String desc, String website) {
+	partnerDAO.updatePartnerById(name,desc, website);
     }
 
     

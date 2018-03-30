@@ -35,6 +35,8 @@ public class PartnerUpdateController implements Initializable {
     @FXML
     private TextField nameTF;
     private PartnersFacade pf = new PartnersFacade();
+    @FXML
+    private TextField updateTF;
     /**
      * Initializes the controller class.
      */
@@ -45,7 +47,7 @@ public class PartnerUpdateController implements Initializable {
 
     @FXML
     private void update(ActionEvent event) throws IOException {
-        pf.update(this.nameTF.getText(), this.descTF.getText());
+        pf.update(this.nameTF.getText(), this.descTF.getText(), this.updateTF.getText());
         Node  source = (Node)  event.getSource(); 
         Stage stage  = (Stage) source.getScene().getWindow();
         stage.close();

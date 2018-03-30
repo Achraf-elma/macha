@@ -20,8 +20,15 @@ public class Event {
     private StringProperty nameProperty;
     private StringProperty locationProperty;
     private StringProperty categProperty;
+    private StringProperty descriptionProperty;
     
+    /*private StringProperty dateProperty;
+    private StringProperty priceProperty;
+    private StringProperty capacityProperty;
+    private StringProperty organizatorProperty;
     
+    */
+    private int eventid;
     private String name;
     private String categ;
     private String location;
@@ -43,10 +50,12 @@ public class Event {
         this.description = description;
     }
     
-    public Event(String name, String categ, String location){
+    public Event(int eventid, String name, String categ, String location, String description){
+        this.eventid = eventid;
         this.nameProperty = new SimpleStringProperty(name);
         this.categProperty = new SimpleStringProperty(categ);
         this.locationProperty = new SimpleStringProperty(location);
+        this.descriptionProperty = new SimpleStringProperty(description);
     }
 
     /**
@@ -89,6 +98,20 @@ public class Event {
      */
     public void setLocation(String location) {
         this.locationProperty.set(location);
+    }
+    
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return descriptionProperty.get();
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.descriptionProperty.set(description);
     }
 
     /**
@@ -134,20 +157,6 @@ public class Event {
     }
 
     /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
      * @return the organizator
      */
     public int getOrganizator() {
@@ -159,5 +168,19 @@ public class Event {
      */
     public void setOrganizator(int organizator) {
         this.organizator = organizator;
+    }
+
+    /**
+     * @return the eventid
+     */
+    public int getEventid() {
+        return eventid;
+    }
+
+    /**
+     * @param eventid the eventid to set
+     */
+    public void setEventid(int eventid) {
+        this.eventid = eventid;
     }
 }

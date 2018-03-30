@@ -14,9 +14,9 @@ public abstract class PartnersDAO {
     private String name;
     private Connection coSql;
 	
-    public abstract void addPartnerById(String name, String desc);
+    public abstract void addPartnerById(String name, String desc, String website);
     public abstract void deletePartnerById(String name);
     public abstract String getAll();
-    public abstract void updatePartnerById(String name, String desc);
+    public abstract void updatePartnerById(String name, String desc, String website);
     public abstract ObservableList<Partner> getAllPartner();
 }

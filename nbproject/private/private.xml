@@ -8,10 +8,12 @@
             <file>file:/C:/Users/mahe/Documents/java/macha/src/database/EventDAO.java</file>
             <file>file:/C:/Users/mahe/Documents/java/macha/src/facade/EventFacade.java</file>
             <file>file:/C:/Users/mahe/Documents/java/macha/src/database/UserDAOPostgres.java</file>
-            <file>file:/C:/Users/mahe/Documents/java/macha/src/facade/UserLoginFacade.java</file>
-            <file>file:/C:/Users/mahe/Documents/java/macha/src/userinterface/LoginUI.java</file>
+            <file>file:/C:/Users/mahe/Documents/java/macha/src/userinterface/EventListUI.fxml</file>
             <file>file:/C:/Users/mahe/Documents/java/macha/src/businessLogic/Event.java</file>
+            <file>file:/C:/Users/mahe/Documents/java/macha/co%20postgres.txt</file>
             <file>file:/C:/Users/mahe/Documents/java/macha/src/userinterface/userView/UserListController.java</file>
+            <file>file:/C:/Users/mahe/Documents/java/macha/src/database/UserDAO.java</file>
+            <file>file:/C:/Users/mahe/Documents/java/macha/src/businessLogic/User.java</file>
         </group>
     </open-files>
 </project-private>
