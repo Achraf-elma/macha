@@ -1,6 +1,7 @@
 package facade;
 import database.*;
 import businessLogic.*;
+import javafx.collections.ObservableList;
 
 public class UserLoginFacade {
 
@@ -16,9 +17,13 @@ public class UserLoginFacade {
 		}else{
 			setConnected(false);
 		}
-		
+        }
+        
+	public ObservableList<User> getAllUser(){
+            return ud.getAll();
+        }
 	
-	}
+
 
 	public Boolean getConnected() {
 		return connected;

@@ -85,16 +85,16 @@ public class LoginController implements Initializable {
 		 private void callUserIndex() throws IOException{
 	
 			 
-			  Stage stage = new Stage();
-			    stage.setTitle("Shop Management");
-			    FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/userinterface/UserIndex.fxml"));
-			    //FXMLLoader myLoader = new FXMLLoader(YourClassHere.class.getResource("creatProduct.fxml"));
-			    Pane myPane = (Pane) myLoader.load();            
+			 Stage stage = new Stage();
+			    stage.setTitle("User List");
+                             Pane myPane = null;
+                            // myPane = FXMLLoader.load(getClass().getResource("/userinterface.userView/UserList.fxml"));
+			              
 			    Scene scene = new Scene(myPane);
 			    stage.setScene(scene);
 			    
 			    stage.show();    
-		      }
+                 }
 
 		 @FXML
 		    private void signup(ActionEvent e){

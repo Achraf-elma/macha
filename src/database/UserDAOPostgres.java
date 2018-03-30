@@ -6,6 +6,8 @@ import java.sql.Statement;
 import java.sql.Date;
 
 import businessLogic.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class UserDAOPostgres extends UserDAO{
@@ -18,6 +20,7 @@ public class UserDAOPostgres extends UserDAO{
 	private String firstname;
 	private String lastname;
 	private String address;
+         private ObservableList<User> PersonData = FXCollections.observableArrayList();
 	
 	private Connection coSql;
 	
@@ -30,10 +33,11 @@ public class UserDAOPostgres extends UserDAO{
 		Statement statement;
 		try {
 			statement = coSql.createStatement();
-			String query = "SELECT * FROM Users WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
+			String query = "SELECT * FROM machaUser WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
 			ResultSet resultset = statement.executeQuery(query);
-			
+			System.out.println("ok");
 			if(!resultset.next()){
+                            System.out.println("null");
 				this.u = null;
 			}else{
 				while(resultset.next()) {
@@ -58,6 +62,7 @@ public class UserDAOPostgres extends UserDAO{
 		
 		return u;
 	}
+
 	
 
 	public User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress) {
@@ -99,6 +104,49 @@ public class UserDAOPostgres extends UserDAO{
 		} 
 		
 		return u;
+
+        }
+     
+       
+        public  ObservableList<User> getAll() {
+		Statement statement;
+                 for(int userid = 1; userid<6; userid++){
+		try {
+                      
+                           
+                       System.out.println("x");
+			statement = coSql.createStatement();
+			String query = "SELECT * FROM machaUser WHERE userID = '" + userid +"'  ";
+			ResultSet resultset = statement.executeQuery(query);
+			
+			if(!resultset.next()){
+                              System.out.println("null");
+				this.u = null;
+			}else{
+				{
+                                      System.out.println("yes");
+					System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
+					this.nick = resultset.getString(2);
+					this.pwd = resultset.getString(2);
+					this.dateOfBirth = resultset.getString(3);
+					this.firstname = resultset.getString(4);
+					this.lastname = resultset.getString(5);
+					this.address = resultset.getString(6);
+				}
+				
+				this.u = new User(nick, firstname, lastname);
+			}
+			
+		
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} 
+                 PersonData.add(u);
+                }
+		return PersonData;
+
 	}
 
 	/*public void dispaly(String nick) {

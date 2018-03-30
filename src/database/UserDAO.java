@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.sql.Date;
 
 import database.ConnectionPostgreSQL;
+import javafx.collections.ObservableList;
 
 public abstract class UserDAO {
 	private User u;
@@ -25,6 +26,7 @@ public abstract class UserDAO {
 
 			
 	public abstract User createById(String userid, String pwd);
+        public abstract ObservableList<User> getAll();
 	
 	public abstract User createById(String userid, String pwd, String fn, String ln, Date birthDate, String adress);
 	
