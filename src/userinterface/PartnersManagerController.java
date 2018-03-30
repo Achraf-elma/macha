@@ -61,7 +61,7 @@ public class PartnersManagerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-       PartnerData.add(new Partner("Smith","John"));
+       //PartnerData.add(new Partner("Smith","John"));
        TVPartner.getItems().addAll(PartnerData);
     }    
 
@@ -87,14 +87,6 @@ public class PartnersManagerController implements Initializable {
         TVPartner.getItems().addAll(PartnerData);
     }
     
-    public static void refresh_table(TableView table)
-{
-        for (int i = 0; i < table.getColumns().size(); i++) {
-    ((TableColumn)(table.getColumns().get(i))).setVisible(false);
-    ((TableColumn)(table.getColumns().get(i))).setVisible(true);
-    }
-}
-
     @FXML
     private void update(ActionEvent event) throws IOException {
         Stage stage = new Stage();

@@ -17,17 +17,18 @@ import userinterface.*;
 public class Partner {
     private String name;
     private String info;
-    
+    private String website;
     private StringProperty nameProperty;
     private StringProperty infoProperty;
-    
+       private StringProperty websiteProperty;
     public Partner(String name){
         this.name = name;
     }
 
-    public Partner(String partnerName, String info) {
+    public Partner(String partnerName, String info, String website) {
       this.nameProperty = new SimpleStringProperty(partnerName);
       this.infoProperty = new SimpleStringProperty(info);
+      this.websiteProperty = new SimpleStringProperty(website);
     }
 
     /**
@@ -56,6 +57,17 @@ public class Partner {
      */
     public void setInfo(String info) {
          this.infoProperty.set(info);
+    }
+    
+    public void getWebsite(String website) {
+        this.websiteProperty.set(website);
+    }
+
+    /**
+     * @param info the info to set
+     */
+    public void setWebsite(String website) {
+         this.websiteProperty.set(website);
     }
     
    

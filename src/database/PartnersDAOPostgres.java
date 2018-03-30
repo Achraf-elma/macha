@@ -21,7 +21,7 @@ public class PartnersDAOPostgres extends PartnersDAO{
     private String parterID;
 	private String partnerName;
 	private String info;
-	
+	private String website;
 	
     public PartnersDAOPostgres(Connection coSql) {
 	this.coSql = coSql;
@@ -88,11 +88,13 @@ public class PartnersDAOPostgres extends PartnersDAO{
 				{
 					//System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
 					this.partnerName = resultset.getString(2);
+                                       
 					this.info = resultset.getString(3);
+                                        this.website = resultset.getString(4);
 					
 				}
 				
-				this.u = new Partner(partnerName, info);
+				this.u = new Partner(partnerName, info, website);
 			}
 			
 		
