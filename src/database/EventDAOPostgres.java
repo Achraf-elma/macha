@@ -62,6 +62,47 @@ public class EventDAOPostgres extends EventDAO {
             }
         }
     
+    public Event createEventById(int eventid){
+        Statement statement;
+		try {
+                    statement = coSql.createStatement();
+           
+		String query = "SELECT * FROM events WHERE eventid = " + eventid;
+                System.out.println(query);
+                ResultSet resultset = statement.executeQuery(query);
+  
+                while(resultset.next()){
+                        ResultSet categSet = coSql.createStatement().executeQuery("SELECT categoryname FROM category WHERE categoryid = " + resultset.getString(6));  
+                        
+                        while(categSet.next()){
+                            this.categName = categSet.getString(1);
+                        }
+                    System.out.println("yes");
+                    this.name = resultset.getString(2);
+                    this.date = resultset.getString(3);
+                    if(resultset.getString(4) != null){
+                        this.price = Float.parseFloat(resultset.getString(4));
+                    }
+                    this.location = resultset.getString(5);
+                    //this.categName = categName;
+                    this.organizator = 2;
+                    if(resultset.getString(8) != null){
+                        this.capacity = Integer.parseInt(resultset.getString(8));
+                    }
+                    this.description = resultset.getString(9);
+                    this.event = new Event(name, categName, location, description);
+                }
+                    
+                
+            }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+             
+         return event;
+    }
+    
+    
     public ObservableList<Event> getAllEvents(){
          try {
             int max=0;
@@ -95,7 +136,7 @@ public class EventDAOPostgres extends EventDAO {
                         this.capacity = Integer.parseInt(resultset.getString(8));
                     }
                     this.description = resultset.getString(9);
-                    this.event = new Event(name, categName, location);
+                    this.event = new Event(name, categName, location, description);
                     System.out.println(event.toString());
                     eventData.add(event);
                 }
