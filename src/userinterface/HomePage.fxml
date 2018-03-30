@@ -26,9 +26,9 @@
          </font>
       </Label>
       <Button fx:id="btnPartners" layoutX="247.0" layoutY="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Partners" />
-      <ImageView fitHeight="129.0" fitWidth="129.0" layoutX="19.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="145.0" fitWidth="142.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/LogoMacha1.png" />
+            <Image url="@../../assets/LogoMacha.png" />
          </image>
       </ImageView>
    </children>
