@@ -9,7 +9,10 @@ import businessLogic.*;
 import facade.*;
 import java.net.URL;
 import java.util.*;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -25,12 +28,15 @@ public class EventListUIController implements Initializable {
      */ 
     
     private EventFacade ef = new EventFacade();
+ 
+    ObservableList<Event> allevents = ef.getAllEvents();
+    @FXML
+    private TableView<Event> eventTable;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-        ArrayList<Event> allevents = new ArrayList<>();
+        eventTable.getItems().addAll(allevents);
     }    
     
 }

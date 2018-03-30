@@ -8,6 +8,7 @@ package facade;
 import businessLogic.*;
 import database.*;
 import java.util.*;
+import javafx.collections.*;
 
 /**
  *
@@ -18,8 +19,8 @@ public class EventFacade {
     private AbstractDAOFactory af = new PostgresFactory();
     private EventDAO ed = af.createEventDAO();
     
-    public ArrayList<Event> getAllEvents(){
-        return ed.getAllEvents();
-    }
+    public ObservableList<Event> getAllEvents(){
+            return ed.getAllEvents();
+        }
         
 }
