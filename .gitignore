@@ -3,3 +3,5 @@
 #/src/database/ConnectionPostgreSQL.java
 /bin1/
 /build/
+/nbproject/private/private.xml
+/nbproject/private/private.properties
