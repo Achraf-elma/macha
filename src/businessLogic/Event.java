@@ -22,12 +22,13 @@ public class Event {
     private StringProperty categProperty;
     private StringProperty descriptionProperty;
     
-    private StringProperty dateProperty;
+    /*private StringProperty dateProperty;
     private StringProperty priceProperty;
     private StringProperty capacityProperty;
     private StringProperty organizatorProperty;
     
-    
+    */
+    private int eventid;
     private String name;
     private String categ;
     private String location;
@@ -49,7 +50,8 @@ public class Event {
         this.description = description;
     }
     
-    public Event(String name, String categ, String location, String description){
+    public Event(int eventid, String name, String categ, String location, String description){
+        this.eventid = eventid;
         this.nameProperty = new SimpleStringProperty(name);
         this.categProperty = new SimpleStringProperty(categ);
         this.locationProperty = new SimpleStringProperty(location);
@@ -97,49 +99,7 @@ public class Event {
     public void setLocation(String location) {
         this.locationProperty.set(location);
     }
-
-    /**
-     * @return the date
-     */
-    public String getDate() {
-        return dateProperty.get();
-    }
-
-    /**
-     * @param date the date to set
-     */
-    public void setDate(String date) {
-        this.dateProperty.set(date);
-    }
-
-    /**
-     * @return the price
-     */
-    public String getPrice() {
-        return priceProperty.get();
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(float price) {
-        this.priceProperty.set(String.valueOf(price));
-    }
-
-    /**
-     * @return the capacity
-     */
-    public String getCapacity() {
-        return capacityProperty.get();
-    }
-
-    /**
-     * @param capacity the capacity to set
-     */
-    public void setCapacity(int capacity) {
-        this.capacityProperty.set(String.valueOf(capacity));
-    }
-
+    
     /**
      * @return the description
      */
@@ -155,16 +115,72 @@ public class Event {
     }
 
     /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    /**
+     * @return the price
+     */
+    public float getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    /**
+     * @return the capacity
+     */
+    public int getCapacity() {
+        return capacity;
+    }
+
+    /**
+     * @param capacity the capacity to set
+     */
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    /**
      * @return the organizator
      */
-    public String getOrganizator() {
-        return organizatorProperty.get();
+    public int getOrganizator() {
+        return organizator;
     }
 
     /**
      * @param organizator the organizator to set
      */
     public void setOrganizator(int organizator) {
-        this.organizatorProperty.set(String.valueOf(organizator));
+        this.organizator = organizator;
+    }
+
+    /**
+     * @return the eventid
+     */
+    public int getEventid() {
+        return eventid;
+    }
+
+    /**
+     * @param eventid the eventid to set
+     */
+    public void setEventid(int eventid) {
+        this.eventid = eventid;
     }
 }

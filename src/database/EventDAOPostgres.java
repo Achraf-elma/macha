@@ -21,6 +21,7 @@ public class EventDAOPostgres extends EventDAO {
     
     private Event event;
     
+    int eventid;
     String name;
     String categName;
     String location;
@@ -78,6 +79,7 @@ public class EventDAOPostgres extends EventDAO {
                             this.categName = categSet.getString(1);
                         }
                     System.out.println("yes");
+                    this.eventid = Integer.parseInt(resultset.getString(1));
                     this.name = resultset.getString(2);
                     this.date = resultset.getString(3);
                     if(resultset.getString(4) != null){
@@ -90,7 +92,7 @@ public class EventDAOPostgres extends EventDAO {
                         this.capacity = Integer.parseInt(resultset.getString(8));
                     }
                     this.description = resultset.getString(9);
-                    this.event = new Event(name, categName, location, description);
+                    this.event = new Event(eventid, name, categName, location, description);
                 }
                     
                 
@@ -124,6 +126,7 @@ public class EventDAOPostgres extends EventDAO {
                             this.categName = categSet.getString(1);
                         }
                     System.out.println("yes");
+                    this.eventid = Integer.parseInt(resultset.getString(1));
                     this.name = resultset.getString(2);
                     this.date = resultset.getString(3);
                     if(resultset.getString(4) != null){
@@ -136,7 +139,7 @@ public class EventDAOPostgres extends EventDAO {
                         this.capacity = Integer.parseInt(resultset.getString(8));
                     }
                     this.description = resultset.getString(9);
-                    this.event = new Event(name, categName, location, description);
+                    this.event = new Event(eventid, name, categName, location, description);
                     System.out.println(event.toString());
                     eventData.add(event);
                 }

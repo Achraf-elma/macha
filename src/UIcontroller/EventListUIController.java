@@ -7,12 +7,22 @@ package UIcontroller;
 
 import businessLogic.*;
 import facade.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,6 +40,7 @@ public class EventListUIController implements Initializable {
     private EventFacade ef = new EventFacade();
  
     ObservableList<Event> allevents = ef.getAllEvents();
+    
     @FXML
     private TableView<Event> eventTable;
 
@@ -37,6 +48,31 @@ public class EventListUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         eventTable.getItems().addAll(allevents);
-    }    
+        eventTable.getSelectionModel().setCellSelectionEnabled(true);
+
     
+        eventTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+            public void handle(MouseEvent event) {
+                Event eventSelected = eventTable.getSelectionModel().getSelectedItem();
+                EventUIController.setId(eventSelected.getEventid());
+                Node  source = (Node)  event.getSource(); 
+                Stage stage  = (Stage) source.getScene().getWindow();
+                stage.close();
+			                            
+                Stage nextStage = new Stage();
+                nextStage.setTitle("User Account");
+                Pane myPane = null;
+                try {
+                    myPane = FXMLLoader.load(getClass().getResource("/userinterface/EventUI.fxml"));
+                } catch (IOException ex) {
+                    Logger.getLogger(EventListUIController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                Scene scene = new Scene(myPane);
+                nextStage.setScene(scene);
+                nextStage.show();
+            }
+        });
+    }
 }

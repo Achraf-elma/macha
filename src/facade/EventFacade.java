@@ -23,4 +23,7 @@ public class EventFacade {
             return ed.getAllEvents();
         }
         
+    public Event getEventById(int eventid){
+        return ed.createEventById(eventid);
+    }
 }
