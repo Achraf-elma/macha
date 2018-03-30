@@ -7,25 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="217.0" layoutY="74.0" text="Welcome home !">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="btnEvent" layoutX="80.0" layoutY="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Events" />
+      <Button fx:id="btnEvent" layoutX="80.0" layoutY="145.0" mnemonicParsing="false" onAction="#viewEvents" prefHeight="45.0" prefWidth="105.0" text="Events" />
       <Button fx:id="btnCreateEvent" layoutX="430.0" layoutY="34.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Create an Event" />
-      <Button fx:id="btnInvitations" layoutX="414.0" layoutY="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Invitations" />
-      <Button fx:id="btnAccount" layoutX="133.0" layoutY="237.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="142.0" text="My Account" />
-      <Button fx:id="btnMessages" layoutX="325.0" layoutY="237.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="141.0" text="My Messages" />
-      <Button fx:id="btnQuit" layoutX="247.0" layoutY="327.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Quit" />
+      <Button fx:id="btnInvitations" layoutX="414.0" layoutY="145.0" mnemonicParsing="false" onAction="#viewInvitations" prefHeight="45.0" prefWidth="105.0" text="Invitations" />
+      <Button fx:id="btnAccount" layoutX="133.0" layoutY="237.0" mnemonicParsing="false" onAction="#viewAccount" prefHeight="46.0" prefWidth="142.0" text="My Account" />
+      <Button fx:id="btnMessages" layoutX="325.0" layoutY="237.0" mnemonicParsing="false" onAction="#viewMessages" prefHeight="46.0" prefWidth="141.0" text="My Messages" />
+      <Button fx:id="btnQuit" layoutX="247.0" layoutY="327.0" mnemonicParsing="false" onAction="#quitApp" prefHeight="45.0" prefWidth="105.0" text="Quit" />
       <Label layoutX="247.0" layoutY="14.0" text="MACHA">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Button fx:id="btnPartners" layoutX="247.0" layoutY="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Partners" />
+      <Button fx:id="btnPartners" layoutX="247.0" layoutY="145.0" mnemonicParsing="false" onAction="#viewPartners" prefHeight="45.0" prefWidth="105.0" text="Partners" />
       <ImageView fitHeight="145.0" fitWidth="142.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/LogoMacha.png" />

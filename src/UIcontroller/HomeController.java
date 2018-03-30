@@ -1,15 +1,18 @@
 package UIcontroller;
 
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import userinterface.userView.*;
 
 import businessLogic.User;
 import facade.InvitationFacade;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -45,7 +48,93 @@ public class HomeController implements Initializable{
 	@FXML
 	private Button btnQuit;
 
+	@FXML
+	private void viewEvents(ActionEvent e) throws IOException{
+		Node  source = (Node)  e.getSource(); 
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Events");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/EventListUI.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
 	
+	@FXML
+	private void viewPartners(ActionEvent e)throws IOException{
+		Node  source = (Node)  e.getSource(); 
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Partners");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/PartnersManager.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
+	
+	@FXML
+	private void viewInvitations(ActionEvent e)throws IOException{
+		Node  source = (Node)  e.getSource(); 
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Invitations");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/Invitation.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
+	
+	@FXML
+	private void viewAccount(ActionEvent e)throws IOException{
+		Node  source = (Node)  e.getSource(); 
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("User Account");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/UserAccount.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
+	
+	@FXML
+	private void viewMessages(ActionEvent e)throws IOException{
+		Node  source = (Node)  e.getSource(); 
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Messages");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/userView/UserList.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+	}
+	
+	@FXML
+	private void quitApp(ActionEvent e){
+		Node  source = (Node)  e.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
+		
+	}
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
