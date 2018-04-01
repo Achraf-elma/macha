@@ -27,7 +27,7 @@ public class HomeUI extends Application {
 	private void initHomeLayout() throws IOException {
 
 		FXMLLoader root = new FXMLLoader(getClass().getResource("HomePage.fxml"));
-		root.setController(new HomeController());
+		//root.setController(new HomeController());
 		Parent parent = root.load();
 		Scene scene = new Scene(parent);
 		primaryStage.setTitle("Home Page");
