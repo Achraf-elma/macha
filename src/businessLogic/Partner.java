@@ -20,7 +20,9 @@ public class Partner {
     private String website;
     private StringProperty nameProperty;
     private StringProperty infoProperty;
-       private StringProperty websiteProperty;
+    private StringProperty websiteProperty;
+    
+    
     public Partner(String name){
         this.name = name;
     }

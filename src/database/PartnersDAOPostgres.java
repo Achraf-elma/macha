@@ -1,5 +1,6 @@
 package database;
 
+import businessLogic.Event;
 import businessLogic.Partner;
 
 import java.sql.Connection;
@@ -17,7 +18,7 @@ public class PartnersDAOPostgres extends PartnersDAO{
     private String p = "";
     private Partner u; 
     private Connection coSql;
-     private ObservableList<Partner> PartnerData = FXCollections.observableArrayList();
+     private ObservableList<Partner> partnerData = FXCollections.observableArrayList();
     private String parterID;
 	private String partnerName;
 	private String info;
@@ -74,29 +75,27 @@ public class PartnersDAOPostgres extends PartnersDAO{
         
         public  ObservableList<Partner> getAllPartner() {
 		Statement statement;
-                 for(int i = 1; i<20; i++){
-		try {
-                      
-			statement = coSql.createStatement();
-			String query = "SELECT * FROM partner WHERE partnerID = '" + i +"'  ";
-			ResultSet resultset = statement.executeQuery(query);
-			
-			if(!resultset.next()){
-                                
-				this.u = null;
-			}else{
-				{
-					//System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
-					this.partnerName = resultset.getString(2);
-                                       
-					this.info = resultset.getString(3);
-                                        this.website = resultset.getString(4);
-					
-				}
-				
-				this.u = new Partner(partnerName, info, website);
-			}
-			
+                try {
+                    int max=0;
+                    statement = coSql.createStatement();
+                    ResultSet maxId = statement.executeQuery("SELECT MAX(partnerid) FROM partner");
+                    while(maxId.next()){
+                        max = Integer.parseInt(maxId.getString(1));
+                    }
+                    for(int i=0; i<max; i++){
+                        String query = "SELECT * FROM partner WHERE partnerid = " + i;
+                        ResultSet resultset = statement.executeQuery(query);
+                        while(resultset.next()){
+                            System.out.println("yes");
+                            this.partnerName = resultset.getString(2);
+                            this.info = resultset.getString(3);
+                            this.website = resultset.getString(4);
+                            
+                            this.u = new Partner(partnerName, info, website);
+                            System.out.println(u.toString());
+                            partnerData.add(u);
+                        }
+                    }
 		
 			
 		} catch (SQLException e) {
@@ -104,11 +103,10 @@ public class PartnersDAOPostgres extends PartnersDAO{
 			e.printStackTrace();
 		} 
                 if (u != null){
-                     PartnerData.add(u); 
+                     partnerData.add(u); 
                 }
-               
-                }
-		return PartnerData;
+             
+		return partnerData;
 
 	}
         public void updatePartnerById(String name, String desc, String website){
