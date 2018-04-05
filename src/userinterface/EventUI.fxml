@@ -16,7 +16,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TextArea fx:id="descripField" layoutX="40.0" layoutY="59.0" prefHeight="102.0" prefWidth="526.0" text="Description" />
+      <TextArea fx:id="descripField" editable="false" layoutX="40.0" layoutY="59.0" prefHeight="102.0" prefWidth="526.0" text="Description" />
       <Label layoutX="40.0" layoutY="216.0" text="Capacity : " />
       <Label fx:id="capacityLabel" layoutX="95.0" layoutY="216.0" text="maxParticipants" />
       <Label layoutX="40.0" layoutY="259.0" text="Price : " />
@@ -24,6 +24,6 @@
       <Label layoutX="391.0" layoutY="216.0" text="Category : " />
       <Label fx:id="categoryLabel" layoutX="449.0" layoutY="216.0" text="category" />
       <Label layoutX="391.0" layoutY="268.0" text="Address : " />
-      <TextArea fx:id="addressField" layoutX="391.0" layoutY="285.0" prefHeight="102.0" prefWidth="191.0" />
+      <TextArea fx:id="addressField" editable="false" layoutX="391.0" layoutY="285.0" prefHeight="102.0" prefWidth="191.0" />
    </children>
 </AnchorPane>

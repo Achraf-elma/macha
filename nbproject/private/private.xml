@@ -3,37 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/UIcontroller/SignUpController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnersManagerController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerAddController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnersManager.fxml</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PartnersDAOPostgres.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/partnerdelete.css</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/ConnectionPostgreSQL.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PostgresFactory.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/UIcontroller/EventCreationUIController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/userView/UserListController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/UserLoginFacade.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/PrivateMessageFacade.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerDelete.fxml</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/LoginUI.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/businessLogic/User.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/facade/PartnersFacade.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/userView/UserListMainUI.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/businessLogic/Partner.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/Login.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/UserDAO.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerUpdateController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/AbstractDAOFactory.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/UIcontroller/LoginController.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerAdd.fxml</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerCRUDUI.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PrivateMessagesCenterUI.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/HomePage.fxml</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/UserDAOPostgres.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/database/PartnersDAO.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/HomeUI.java</file>
-            <file>file:/Users/maximesoustelle/Documents/Polytech/macha/src/userinterface/PartnerDeleteController.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/businessLogic/Event.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/PostgresFactory.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/businessLogic/Partner.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/EventDAOPostgres.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/UserEventFormFacade.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/PartnersDAOPostgres.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/userinterface/PartnersManager.fxml</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventCreationUIController.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventListUIController.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/EventFacade.java</file>
         </group>
     </open-files>
 </project-private>

@@ -143,9 +143,18 @@ public class UserDAOPostgres extends UserDAO{
         
         public void deleteUserById(String name){
             Statement statement;
+            int userid = 0;
 		try {
-			statement = coSql.createStatement();
-                        System.out.println("OOOO");
+                        String idQuery = "SELECT userid FROM machauser WHERE nickname = '" + name + "'";
+                        ResultSet result = coSql.createStatement().executeQuery(idQuery);
+                        while(result.next())
+                        {
+                            userid = Integer.parseInt(result.getString(1));
+                        }
+                        String eventQuery = "DELETE FROM events WHERE organizatorid = '" + userid + "'";
+                        coSql.createStatement().executeUpdate(eventQuery);
+
+                        statement = coSql.createStatement();
 			String query = "DELETE FROM machauser WHERE nickname = '" + name + "'";
 			statement.executeUpdate(query);
 		} catch (SQLException e) {
