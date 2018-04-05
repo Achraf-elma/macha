@@ -23,7 +23,7 @@ import javafx.scene.control.TextField;
 public class EventDeleteUIController implements Initializable {
 
     @FXML
-    private TextField EventNameTF;
+    private TextField nameTF;
     @FXML
     private Button deleteBtn;
     private EventFacade ef = new EventFacade();
@@ -39,7 +39,7 @@ public class EventDeleteUIController implements Initializable {
 
     @FXML
     private void delete(ActionEvent event) throws IOException{
-         ef.delete(this.EventNameTF.getText());
+         ef.delete(this.nameTF.getText());
     }
     
 }

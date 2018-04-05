@@ -13,12 +13,14 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -43,6 +45,8 @@ public class EventListUIController implements Initializable {
     
     @FXML
     private TableView<Event> eventTable;
+    @FXML
+    private Button deleteBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -74,5 +78,19 @@ public class EventListUIController implements Initializable {
                 nextStage.show();
             }
         });
+    }
+
+    @FXML
+    private void delete(ActionEvent event) throws IOException {
+                    
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Delete an event");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/EventDeleteUI.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+
     }
 }
