@@ -47,6 +47,8 @@ public class EventListUIController implements Initializable {
     private TableView<Event> eventTable;
     @FXML
     private Button deleteBtn;
+    @FXML
+    private Button closeBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -92,5 +94,12 @@ public class EventListUIController implements Initializable {
         nextStage.setScene(scene);
         nextStage.show(); 
 
+    }
+
+    @FXML
+    private void close(ActionEvent event) {
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
     }
 }

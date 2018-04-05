@@ -127,9 +127,7 @@ public class EventDAOPostgres extends EventDAO {
                 max = Integer.parseInt(maxId.getString(1));
             }
             for(int i=0; i<max; i++){
-                System.out.println("Tour " + i);
 		String query = "SELECT * FROM events WHERE eventid = " + i;
-                System.out.println(query);
                 ResultSet resultset = statement.executeQuery(query);
   
                 while(resultset.next()){

@@ -9,8 +9,8 @@
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/EventDAOPostgres.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/UserEventFormFacade.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/database/PartnersDAOPostgres.java</file>
+            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/userinterface/PartnersManagerController.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/userinterface/PartnersManager.fxml</file>
-            <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventCreationUIController.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/UIcontroller/EventListUIController.java</file>
             <file>file:/C:/Users/cyp/eclipse-workspace/macha/src/facade/EventFacade.java</file>
         </group>

@@ -39,12 +39,11 @@ public class CategoryDAOPostgres extends CategoryDAO {
                 
 		
                     statement = coSql.createStatement();
-		    String query = "SELECT eventID, count(*) FROM events WHERE categoryID = '" + categoryID +"' GROUP BY eventID ";
+		    String query = "SELECT count(*) FROM events WHERE categoryID = " + categoryID + " GROUP BY eventID ";
 		    ResultSet resultset = statement.executeQuery(query);
         String nbofevent;
                   
                     if(!resultset.next()){
-                              System.out.println("null");
 				nbofevent = "0";
 			}else{
                  nbofevent = (resultset.getString(1));
@@ -54,42 +53,35 @@ public class CategoryDAOPostgres extends CategoryDAO {
     @Override
          public  ObservableList<Category> getAll() {
 		Statement statement;
-                for(int id = 1; id<20; id++){
 		try {
-                      
+                        int max=0;
+                        statement = coSql.createStatement();
+                        ResultSet maxId = statement.executeQuery("SELECT MAX(categoryid) FROM category");
+                        while(maxId.next()){
+                            max = Integer.parseInt(maxId.getString(1));
+                        }
+                        for(int i=0; i<max; i++){
                            
                       
-			statement = coSql.createStatement();
-			String query = "SELECT * FROM category WHERE categoryID = '" + id +"'  ";
-			ResultSet resultset = statement.executeQuery(query);
-			
-			if(!resultset.next()){
-                              System.out.println("null");
-				this.u = null;
-			}else{
-				{
-                                      System.out.println("yes");
-					System.out.println(resultset.getString(1) + " C" + resultset.getString(2));
-                                        this.categoryID =  resultset.getString(1);
-					this.categoryName = resultset.getString(2);
-					
-				}
-			
-				this.u = new Category(categoryName, getnbEvent(categoryID) );
-                                
+                            statement = coSql.createStatement();
+                            String query = "SELECT * FROM category WHERE categoryID = " + i;
+                            ResultSet resultset = statement.executeQuery(query);
+
+                            if(!resultset.next()){
+                                    this.u = null;
+                            }
+                            else{   
+                                this.categoryID =  resultset.getString(1);
+                                this.categoryName = resultset.getString(2);
+                                this.u = new Category(categoryName, getnbEvent(categoryID) );
+                                CategoryData.add(u);
+                            }
 			}
-			
-		
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		} 
-                 if (u != null){
-                 CategoryData.add(u);
-                 }
                 }
-		return CategoryData;
+                catch (SQLException e) {
+                    e.printStackTrace();
+		}
+                return CategoryData;
 
 	}
 	

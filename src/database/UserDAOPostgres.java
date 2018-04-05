@@ -35,9 +35,7 @@ public class UserDAOPostgres extends UserDAO{
 			statement = coSql.createStatement();
 			String query = "SELECT * FROM machauser WHERE nickname = '" + userid +"' AND pwd = '" + pwd + "'";
 			ResultSet resultset = statement.executeQuery(query);
-			System.out.println("ok");
 			if(!resultset.next()){
-                System.out.println("null");
 				this.u = null;
 			}else{
 				while(resultset.next()) {

@@ -40,10 +40,7 @@ public class PartnersManagerController implements Initializable {
     private PartnersFacade pf = new PartnersFacade();
     @FXML
     private Button deleteBtn;
-    @FXML
     private TextArea textArea;
-    @FXML
-    private Button showBtn;
     @FXML
     private Button updateBtn;
 
@@ -54,6 +51,8 @@ public class PartnersManagerController implements Initializable {
      
     @FXML
     private TableView<Partner> TVPartner;
+    @FXML
+    private Button closeBtn;
  
     /**
      * Initializes the controller class.
@@ -81,7 +80,6 @@ public class PartnersManagerController implements Initializable {
         stage.show(); 
     }
 
-    @FXML
     private void getAll(ActionEvent event) {
         textArea.setText(pf.getAll());
         TVPartner.getItems().addAll(PartnerData);
@@ -123,4 +121,11 @@ public class PartnersManagerController implements Initializable {
     }
       Stage stage;
     void setStage(Stage stg){stage=stg;}
+
+    @FXML
+    private void close(ActionEvent event) {
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
+    }
 }

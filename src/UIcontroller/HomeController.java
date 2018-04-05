@@ -26,8 +26,6 @@ import userinterface.UserIndexUI;
 import javafx.event.ActionEvent;
 
 public class HomeController implements Initializable{
-	@FXML
-	private Button btnEvents;
 
 	@FXML
 	private Button btnCreateEvent;
@@ -50,6 +48,10 @@ public class HomeController implements Initializable{
 
         @FXML
 	private Button btnAdmin;
+    @FXML
+    private Button btnEvent;
+    @FXML
+    private Button categBtn;
 
 	@FXML
 	private void viewEvents(ActionEvent e) throws IOException{
@@ -148,4 +150,30 @@ public class HomeController implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
+
+    @FXML
+    private void viewEventCreation(ActionEvent event) throws IOException {
+        
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Event creation");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/EventCreationUI.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+    }
+
+    @FXML
+    private void viewCategoryList(ActionEvent event)throws IOException {
+        
+        Stage nextStage = new Stage();
+        nextStage.setTitle("Categories");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/userinterface/CategoryList.fxml"));
+
+        Scene scene = new Scene(myPane);
+        nextStage.setScene(scene);
+        nextStage.show(); 
+    }
 }

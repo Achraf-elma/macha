@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
  import facade.*;
+import javafx.scene.Node;
  
 public class CategoryListController implements Initializable {
  
@@ -31,14 +32,15 @@ public class CategoryListController implements Initializable {
  
     @FXML
     private void handleButtonAction(ActionEvent event) {
-       stage.close();
+        Node  source = (Node)  event.getSource(); 
+        Stage oldStage  = (Stage) source.getScene().getWindow();
+        oldStage.close();
     }
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
        
-       CategoryData.add(new Category("FUN","5"));
+       //CategoryData.add(new Category("FUN","5"));
        TVPerson.getItems().addAll(CategoryData);
        }    
  

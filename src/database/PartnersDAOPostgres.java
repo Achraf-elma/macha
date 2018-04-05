@@ -86,13 +86,11 @@ public class PartnersDAOPostgres extends PartnersDAO{
                         String query = "SELECT * FROM partner WHERE partnerid = " + i;
                         ResultSet resultset = statement.executeQuery(query);
                         while(resultset.next()){
-                            System.out.println("yes");
                             this.partnerName = resultset.getString(2);
                             this.info = resultset.getString(3);
                             this.website = resultset.getString(4);
                             
                             this.u = new Partner(partnerName, info, website);
-                            System.out.println(u.toString());
                             partnerData.add(u);
                         }
                     }
