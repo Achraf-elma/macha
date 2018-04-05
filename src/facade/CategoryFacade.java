@@ -5,10 +5,23 @@
  */
 package facade;
 
+import businessLogic.Category;
+import businessLogic.User;
+import database.AbstractDAOFactory;
+import database.CategoryDAO;
+import database.PostgresFactory;
+import database.UserDAO;
+import javafx.collections.ObservableList;
+
 /**
  *
- * @author cyp
+ * @author h
  */
 public class CategoryFacade {
-    
+    private AbstractDAOFactory af = new PostgresFactory();
+	private CategoryDAO ud = af.createCategoryDAO();
+        
+        public ObservableList<Category> getAll(){
+            return ud.getAll();
+        }
 }

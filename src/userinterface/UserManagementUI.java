@@ -13,10 +13,10 @@ public class UserManagementUI extends Application {
     @Override
     public void start(Stage stage) throws Exception {
  
-        FXMLLoader loader = new FXMLLoader(UserManagementUI.class.getResource("UserManagement.fxml"));
+        FXMLLoader loader = new FXMLLoader(UserManagementUI.class.getResource("CategoryList.fxml"));
         
         Parent root = (Parent)loader.load();
-        final UserManagementController controller = loader.getController();
+        final CategoryListController controller = loader.getController();
         controller.setStage(stage);
  
         Scene scene = new Scene(root);

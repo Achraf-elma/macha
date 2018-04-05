@@ -5,10 +5,26 @@
  */
 package database;
 
+import businessLogic.Category;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  *
- * @author cyp
+ * @author h
  */
-public class CategoryDAO {
+public abstract class CategoryDAO {
     
+     private Category u;
+    private String categoryName;
+    private String categoryID;
+	private String numberOfEvent;
+         private ObservableList<Category> CategoryData = FXCollections.observableArrayList();
+         
+         private Connection coSql;
+         
+          public abstract String getnbEvent(String categoryID) throws SQLException;
+          public abstract ObservableList<Category> getAll();
 }

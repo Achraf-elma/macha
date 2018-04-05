@@ -28,9 +28,9 @@ public class User {
         this.userlastname = null;
     }
  
-    public User(String userfirstname, String userlastname, String nickname) {
+    public User(String nickname, String userfirstname, String lastname) {
         this.userfirstnameProperty = new SimpleStringProperty(userfirstname);
-        this.userlastnameProperty = new SimpleStringProperty(userlastname);
+        this.userlastnameProperty = new SimpleStringProperty(lastname);
         this.nicknameProperty = new SimpleStringProperty(nickname);
    
     }

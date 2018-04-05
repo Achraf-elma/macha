@@ -6,5 +6,5 @@ public abstract class AbstractDAOFactory {
     public abstract PartnersDAO createPartnerDAO();
     public abstract EventDAO createEventDAO();
     public abstract InvitationDAO createInvitationDAO();
-
+    public abstract CategoryDAO createCategoryDAO();
 }
